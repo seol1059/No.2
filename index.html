@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    * {margin: 0 ; padding: 0;}
+    html, body {width: 100%; height: 100%;}
+    ul, li, ol {list-style: none;}
+
+    header {width: 100%; height: 50px; margin: 0; background-color: #000; }
+    header > .small {width: 100%;  display: flex; align-items: center; justify-content: space-around; background-color: #000;  }
+    header a {padding: 15px; text-decoration: none; color: #666;}
+    header a:hover {background-color: #333; color: #666;}
+
+    .logo {width: 80px; line-height: 50px; background-color: #000; color: #666; text-align: center;}
+
+    #b {display: none;}
+    #a {display: block;}
+
+    #myNav {display: none;}
+
+
+
+    #slider {width: 100%; height: 100%; margin: 0 auto;   }
+    #slider img {width: 100%; height: 100%; margin: 0 auto;  filter: brightness(50%); }
+
+    #information {width: 100%; height: 100%; margin: 0 auto; background-color: pink;}
+    #information > .in {width: 100%; height: 100%; margin: 0 auto; display: flex;}
+    #information > .in > .im {width: 50%; height: 100%; display: flex; align-items: center; justify-content: space-around; } 
+    #information > .in > .im img {width: 100%; height: 100%; margin: 0 auto; display: flex; justify-content: center; }
+    #information > .in > .text {width: 50%; height: 100%;  margin: 0 auto; background-color: #000; display: flex; }
+    #information > .in > .text > p { text-align: center; font-size: 16px; color: #666; display: flex; justify-content: center; align-items: center; margin: 0 auto;}
+
+    #poster {width: 100%; height: 100%; margin: 0 auto; background-color: #000;  }
+    #poster img {width: 33%; height: 100%; margin: 0 auto; margin-left: 2px; }
+
+
+
+    #Characters {width: 100%; height: 150%; margin: 0 auto; background-color: #000; display: flex; }
+    #Characters > #box1 {width: 1200px; height: 80%; background-color: #000; margin: auto; 
+      display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly; }
+    #Characters > #box1 > #mg {width: 30%; height: 35%; background-size: cover; display: flex;
+      outline:10px solid #ccc; outline-offset: -50px; filter: brightness(50%); }
+     
+    /* #Characters > #box1 > #mg img {width: 100%; height: 100%;} */
+  
+    
+    #mg h1 {font-size: 60px; text-align: center; color: #ccc; margin: 0 auto;
+      display: flex;  flex-direction: column; justify-content: center; }
+
+     #teaser {width: 100%; height: 100%; margin: 0 auto; background-color: aquamarine;}
+  .teacer_text {width: 1200px; height: 30%; margin: 0 auto; text-align: center;
+    color: azure; background-color: blue;}
+  .tea {width: 1200px; height: 70%; margin: 0 auto; background-color: red; display: flex;}
+  /* .tea img {width: 590px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column; justify-content: center;} */
+    .tea video {width: 590px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column; justify-content: center;}
+
+    
+
+
+
+
+    
+      footer{width: 100%; height: 320px; background-color: #000; text-align: center;}
+#footer_box{width: 1200px; height: 320px; margin: 0 auto;}
+
+#footer_box img{width: 230px; height: 100px;}
+#footer_ul{width: 1000px; height: 300px; margin: 0 auto; padding-top: 15px;
+           display: flex; justify-content: space-around; align-items: center; text-align: center;}
+#footer_ul{width: 100%;}
+
+#footer_ul li{ font-size: 14px; color: #666;}
+#footer_ul li:nth-of-type(2n){margin-bottom: 15px;}
+    
+    </style>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function openNav(){
+        document.getElementById("myNav").style.width="100%";
+    }
+    function closeNav(){
+        document.getElementById("myNav").style.width="0%"
+    }
+</script>
+</head>
+<body>
+  <header>
+    <div class="small">
+      <div class="logo">logo</div>
+
+      <div id="a">
+        <a href="#">Team</a>
+        <a href="#">Work</a>
+        <a href="#">Price</a>
+        <a href="#">Contact</a>
+
+      </div>
+      <img src="img/i.png" id="b" onclick="openNav()">
+    </div>
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+
+      <div class="overlay-content">
+        <a href="#">HOME</a>
+        <a href="#">PAGES</a>
+        <a href="#">SERVICES</a>
+        <a href="#">EVENT</a>
+        <a href="#">GALLERY</a>
+        <a href="#">BLOG</a>
+        <a href="#">SHOP</a>
+      </div>
+    </div>
+  </header>
+  <div id="slider">
+    <img src="img/0.jpg" alt="">
+  </div>
+  <div id="information">
+    <div class="in">
+      <div class="im"><img src="img/a.jpg" alt=""></div>
+      <div class="text">
+        <p>어느날, 집앞에서 정체를 알 수 없는 누군가에게 아빠가 무참히 살해당한다.<br>
+          아빠를 죽인 범인을 찾아내 직접 죽여버리겠다고 다짐한 지우,
+          아빠가 소속되어있던 범죄조직의 보스 최무진을 찾아간 지우는 <br>
+          그가 이끄는 악명높은 마약조직의 멤버로 들어가게 된다.<br>
+          새로운 신분을 얻게 되고 최무진의 지시에 따라 경찰쪽의 스파이로 잠입한 지우에게 점차 펼쳐지는 냉혹한 범죄세계와<br>
+          그녀의 복수를 그려낸 액션 누아르 넷플릭스 시리즈
+        </p>
+      </div>
+    </div>
+  </div>
+
+<div id="poster">
+<a href="#"><img src="img/7.jpg" class="d"></a>
+<a href="#"><img src="img/8.jpg" class="e"></a>
+<a href="#"><img src="img/9.jpg" class="f"></a>
+</div>
+
+
+
+<div id="Characters">
+  <div id="box1">
+    <div id="mg" class="bo1" style="background-image: url('img/21.jpg') ; ">
+    <h1>Choi<br>Moojin</h1></div>
+    <div id="mg" class="bo2" style="background-image: url('img/22.jpg') ; ">
+    <h1>Yoon<br>Jiwoo</h1></div>
+    <div id="mg" class="bo3" style="background-image: url('img/13.jpg') ; ">
+    <h1>Jeon<br>Pildo</h1></div>
+    <div id="mg" class="bo4" style="background-image: url('img/14.jpg') ; ">
+    <h1>Jeong<br>Taeju</h1></div>
+    <div id="mg" class="bo5" style="background-image: url('img/23.jpg') ; ">
+    <h1>Do<br>Gangjae</h1></div>
+  </div>
+</div>
+
+<div id="teaser">
+  <div class="teacer_text">예고편</div>
+  <div class="tea">
+  
+  <video src="img/마이네임-공식예고편-넷플릭스.mp4" poster="img/maxresdefault.png"></video>
+
+  </div>
+    
+    
+</div>
+
+
+
+
+
+
+
+
+
+<footer>
+  <footer>
+    <div id="footer_box">
+        <div id="footer_ul">
+            <img src="img/my.png" alt="마이 네임">
+            <ul>
+                <li> <개봉일> </li>
+                <br>
+                <li>2021.10.15</li>
+                <li> <장르> </li>
+                <br>
+                <li>
+                    액션 / 범죄 / 느와르 / 스릴러 / 피카레스크 / 복수 / 미스터리 / 드라마
+                </li>
+            </ul>
+
+            <ul>
+                <li> <감독></li>
+                <br>
+                <li>
+                    김진민
+                </li>
+                <li> <제작></li>
+                <br>
+                <li>
+                    배준모 <br>
+                    최명규 <br>
+                  
+                </li>
+                <li><각본></li>
+                <br>
+                <li>
+                   김바다
+                   
+                </li>
+            </ul>
+
+            <ul>
+                <li><출연></li>
+                <br>
+                <li>
+                    한소희 <br>
+                    박희순 <br>
+                    안보현 <br>
+                    이학주 <br>
+                    장ㅡ률 <br>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
