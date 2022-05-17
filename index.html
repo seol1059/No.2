@@ -23,8 +23,6 @@
 
     #myNav {display: none;}
 
-
-
     #slider {width: 100%; height: 100%; margin: 0 auto;   }
     #slider img {width: 100%; height: 100%; margin: 0 auto;  filter: brightness(50%); }
 
@@ -38,47 +36,69 @@
     #poster {width: 100%; height: 100%; margin: 0 auto; background-color: #000;  }
     #poster img {width: 33%; height: 100%; margin: 0 auto; margin-left: 2px; }
 
-
-
     #Characters {width: 100%; height: 150%; margin: 0 auto; background-color: #000; display: flex; }
     #Characters > #box1 {width: 1200px; height: 80%; background-color: #000; margin: auto; 
-      display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-evenly; }
+    display: flex; flex-wrap: wrap; align-items: center; flex-direction: row; justify-content: space-evenly; }
     #Characters > #box1 > #mg {width: 30%; height: 35%; background-size: cover; display: flex;
-      outline:10px solid #ccc; outline-offset: -50px; filter: brightness(50%); }
+    outline:10px solid #ccc; outline-offset: -50px; filter: brightness(50%); }
      
     /* #Characters > #box1 > #mg img {width: 100%; height: 100%;} */
   
-    
     #mg h1 {font-size: 60px; text-align: center; color: #ccc; margin: 0 auto;
       display: flex;  flex-direction: column; justify-content: center; }
 
-     #teaser {width: 100%; height: 100%; margin: 0 auto; background-color: aquamarine;}
-  .teacer_text {width: 1200px; height: 30%; margin: 0 auto; text-align: center;
-    color: azure; background-color: blue;}
-  .tea {width: 1200px; height: 70%; margin: 0 auto; background-color: red; display: flex;}
-  /* .tea img {width: 590px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column; justify-content: center;} */
-    .tea video {width: 590px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column; justify-content: center;}
+    #teaser {width: 100%; height: 100%; margin: 0 auto; background-color: #000;  }
+    .teaser_text {width: 1200px; height: 30%; margin: auto; text-align: center;
+    color: #666; background-color: #000; font-size: 24px; }
+    .teaser_text > p {height: 100%; font-size: 24px; margin: auto; text-align: center; display: flex; justify-content: center; align-items: center;}
+    .teaser_mv {width: 1200px; height: 70%; margin: 0 auto; background-color: #000; display: flex; }
+    .teaser_mv > .tea {width: 1200px; height: 300px;  margin: 0 auto; background-color: #000;
+      display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly;}
+    /* .teaser_mv > .ser {width: 600px; height: 100%; float: right; margin: 0 auto; background-color: palegoldenrod; display: flex; } */
+  /* .tea > img {width: 590px; height: 300px; margin: 0 auto; display: flex;  flex-direction: column;
+    justify-content: center; }  */
+
+/* 
+  .tea > video {width: 535px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column;
+    justify-content: center; } 
+    .ser > video {width: 535px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column;
+    justify-content: center; }  */
+
+    .teaser_mv > video {width: 535px; height: 300px; margin: 0 auto;  display: flex;
+      flex-direction: column; justify-content: center; } 
+    /* .cer > img {width: 590px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column;
+    justify-content: center;} */
+  /* .cer > img:hover {opacity: 1;} */
+    /* .tea > img:hover {opacity: 0;} */
+
+    #teaser_text2 > p:nth-child(1) {margin-left: -444px; margin-top: 20px; color: #666;}
+    #teaser_text2 > p:nth-child(2) {text-align: center; margin-top: -20px; color: #666;}
+
+    #round {width: 100%; height: 100%; margin: 0 auto; background-color: aqua;}
+
+
+
+
+
+
+
+
+
+
+
+
 
     
+    footer{width: 100%; height: 320px; background-color: #000; text-align: center;}
+    #footer_box{width: 1200px; height: 320px; margin: 0 auto;}
 
-
-
-
-    
-      footer{width: 100%; height: 320px; background-color: #000; text-align: center;}
-#footer_box{width: 1200px; height: 320px; margin: 0 auto;}
-
-#footer_box img{width: 230px; height: 100px;}
-#footer_ul{width: 1000px; height: 300px; margin: 0 auto; padding-top: 15px;
+    #footer_box img{width: 230px; height: 100px;}
+    #footer_ul{width: 1000px; height: 300px; margin: 0 auto; padding-top: 15px;
            display: flex; justify-content: space-around; align-items: center; text-align: center;}
-#footer_ul{width: 100%;}
+    #footer_ul{width: 100%;}
 
-#footer_ul li{ font-size: 14px; color: #666;}
-#footer_ul li:nth-of-type(2n){margin-bottom: 15px;}
+    #footer_ul li{ font-size: 14px; color: #666;}
+    #footer_ul li:nth-of-type(2n){margin-bottom: 15px;}
     
     </style>
 
@@ -93,8 +113,11 @@
         document.getElementById("myNav").style.width="0%"
     }
 </script>
+
 </head>
+
 <body>
+
   <header>
     <div class="small">
       <div class="logo">logo</div>
@@ -162,19 +185,31 @@
     <h1>Do<br>Gangjae</h1></div>
   </div>
 </div>
-
 <div id="teaser">
-  <div class="teacer_text">예고편</div>
-  <div class="tea">
-  
-  <video src="img/마이네임-공식예고편-넷플릭스.mp4" poster="img/maxresdefault.png"></video>
-
+  <div class="teaser_text">
+    <p>예고편</p>
   </div>
-    
-    
+  <div class="teaser_mv">
+    <div class="tea">
+      <video controls="controls" poster="img/maxresdefault(5).png" width="535px" height="300px">
+        <source src="video/마이네임-공식예고편-넷플릭스.mp4" type="audio/mp4">
+      </video>
+      <div class="ser">
+        <video controls="controls" poster="img/maxresdefault.png" width="535px" height="300px">
+          <source src="video/마이네임-공식티저예고편-넷플릭스.mp4" type="audio/mp4">
+        </video>
+        <div id="teaser_text2">
+          <p>마이 네임 | 공식 예고편 | 넷플릭스</p>
+          <p>마이 네임 | 공식 티저 예고편 | 넷플릭스</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div id="round">
 
+</div>
 
 
 
