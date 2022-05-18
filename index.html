@@ -23,8 +23,10 @@
 
     #myNav {display: none;}
 
-    #slider {width: 100%; height: 100%; margin: 0 auto;   }
-    #slider img {width: 100%; height: 100%; margin: 0 auto;  filter: brightness(50%); }
+    #slider {width: 100%; height: calc(100% - 50px); margin: 0 auto;  filter: brightness(50%); 
+      background-image: url(img/90.png); background-position: center; background-size: cover;
+      background-repeat: no-repeat;}
+    /* #slider img {width: 100%; height: 100%; margin: 0 auto;  filter: brightness(50%); } */
 
     #information {width: 100%; height: 100%; margin: 0 auto; background-color: pink;}
     #information > .in {width: 100%; height: 100%; margin: 0 auto; display: flex;}
@@ -33,13 +35,17 @@
     #information > .in > .text {width: 50%; height: 100%;  margin: 0 auto; background-color: #000; display: flex; }
     #information > .in > .text > p { text-align: center; font-size: 16px; color: #666; display: flex; justify-content: center; align-items: center; margin: 0 auto;}
 
-    #poster {width: 100%; height: 100%; margin: 0 auto; background-color: #000;  }
-    #poster img {width: 33%; height: 100%; margin: 0 auto; margin-left: 2px; }
+    #poster {width: 100%; height: auto; margin: 0 auto; background-color: #000; display: flex; }
+    #poster img {width: 100%; }
+    .d {width: 33%; height: 100%; margin: 0 auto; display: flex;}
+    .e {width: 33%; height: 100%; margin: 0 auto; display: flex;}
+    .f {width: 33%; height: 100%; margin: 0 auto; display: flex;}
+    /* #poster img {width: 33%; height: 100%; margin: 0 auto; margin-left: 2px; } */
 
     #Characters {width: 100%; height: 150%; margin: 0 auto; background-color: #000; display: flex; }
-    #Characters > #box1 {width: 1200px; height: 80%; background-color: #000; margin: auto; 
+    #Characters > #box1 {width: 1200px; height: 100%; background-color: #000; margin: auto; 
     display: flex; flex-wrap: wrap; align-items: center; flex-direction: row; justify-content: space-evenly; }
-    #Characters > #box1 > #mg {width: 30%; height: 35%; background-size: cover; display: flex;
+    #Characters > #box1 > #mg {width: 350px; height: 350px; background-size: cover; display: flex;
     outline:10px solid #ccc; outline-offset: -50px; filter: brightness(50%); }
      
     /* #Characters > #box1 > #mg img {width: 100%; height: 100%;} */
@@ -74,16 +80,123 @@
     #teaser_text2 > p:nth-child(1) {margin-left: -444px; margin-top: 20px; color: #666;}
     #teaser_text2 > p:nth-child(2) {text-align: center; margin-top: -20px; color: #666;}
 
-    #round {width: 100%; height: 100%; margin: 0 auto; background-color: aqua;}
+    #round {width: 100%; height: 100%; margin: 0 auto; background-color: #000;}
+    .infor {width: 50%; height: 100%; margin: 0 auto; background-image: url(img/30.jpg);
+      background-position: center; background-size: cover; float: left;}
+    .infor img {width: 100%; height: 100%; margin: 0 auto;}
+    .mation {width: 50%; height: 100%; margin: 0 auto; background-color: #000; float: right;
+      display: flex; flex-direction: column; justify-content: space-evenly;}
+   
 
+    .one {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex;}
+    .one:hover {opacity: 0.5;}
+    .one img {width: 40%; height: 100%; margin: 0; float: left;}
+    .again1_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
+    .again1_text > span {font-size: 18px; text-align: center; color: #666;}
+    .again1_text > h1 {font-size: 14px; text-align: center; color: #666;}
 
+    .two {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex;}
+    .two:hover {opacity: 0.5;}
+    .two img {width: 40%; height: 100%; margin: 0; float: left;}
+    .again2_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
+    .again2_text > span {font-size: 18px; text-align: center;}
+    .again2_text > h1 {font-size: 14px; text-align: center;}
 
+    .three {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex; }
+    .three:hover {opacity: 0.5;}
+    .three img {width: 40%; height: 100%; margin: 0; float: left;}
+    .again3_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
+    .again3_text > span {font-size: 18px; text-align: center;}
+    .again3_text > h1 {font-size: 14px; text-align: center;}
 
+    .four {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex;}
+    .four:hover {opacity: 0.5;}
+    .four img {width: 40%; height: 100%; margin: 0; float: left;}
+    .again4_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
+    .again4_text > span {font-size: 18px; text-align: center;}
+    .again4_text > h1 {font-size: 14px; text-align: center;}
+    
+    .five {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex;}
+    .five:hover {opacity: 0.5;}
+    .five img {width: 40%; height: 100%; margin: 0; float: left;}
+    .again5_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
+    .again5_text > span {font-size: 18px; text-align: center;}
+    .again5_text > h1 {font-size: 14px; text-align: center;}
 
+     
+    .btn-6 { width: 200px; height: 40px; margin: 0 auto;
+   background: #fff;
+  color: #000;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 2px;
+  background: #fff;
+}
+.btn-6:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-6:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-6:hover{
+  color: #fff;
+  background: transparent;
+}
+.btn-6:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  background: #fff;
+}
+.btn-6 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-6 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+  width: 100%;
+}
+.btn-6 span:hover:after {
+  width: 100%;
+} 
 
-
-
-
+#clip {width: 100%; height: 100%; margin: 0 auto; background-color: royalblue;}
+.cl {width: 1200px; height: 100%; margin: 0 auto; background-color: antiquewhite; display: flex;
+  flex-direction: column; justify-content: space-evenly;}
 
 
 
@@ -146,7 +259,7 @@
     </div>
   </header>
   <div id="slider">
-    <img src="img/0.jpg" alt="">
+    <!-- <img src="img/0.jpg" alt=""> -->
   </div>
   <div id="information">
     <div class="in">
@@ -164,9 +277,15 @@
   </div>
 
 <div id="poster">
-<a href="#"><img src="img/7.jpg" class="d"></a>
-<a href="#"><img src="img/8.jpg" class="e"></a>
-<a href="#"><img src="img/9.jpg" class="f"></a>
+<div class="d"><a href="#">
+  <img src="img/7.jpg" alt="">
+</a></div>
+<div class="e"><a href="#">
+  <img src="img/8.jpg" alt="">
+</a></div>
+<div class="f"><a href="#">
+  <img src="img/9.jpg" alt="">
+</a></div>
 </div>
 
 
@@ -183,7 +302,10 @@
     <h1>Jeong<br>Taeju</h1></div>
     <div id="mg" class="bo5" style="background-image: url('img/23.jpg') ; ">
     <h1>Do<br>Gangjae</h1></div>
+    <div id="mg" class="bo6" style="background-image: url('img/100.jpg') ; ">
+    <h1>Yoon<br>Donghun</h1></div>
   </div>
+
 </div>
 <div id="teaser">
   <div class="teaser_text">
@@ -206,9 +328,87 @@
     </div>
   </div>
 </div>
-
 <div id="round">
+  <div class="infor"></div>
+  <div class="mation">
 
+    <div class="one">
+      <img src="img/31.jpg" alt="">
+      <div class="again1_text">
+        <span>1. 1화</span>
+        <h1><br>최악의 생일이었다.<br>
+          생일을 축하해주러 찾아온 아빠의 죽음을 눈앞에서 목격한 윤지우.<br>
+          복수에 혈안이 된 그녀는 무모한 행동도 서슴지 않는다.<br>
+          범인을 찾을 가능성만 있다면.
+        </h1>
+      </div>
+
+    </div>
+
+    <div class="two">
+      <img src="img/32.jpg" alt="">
+      <div class="again2_text">
+        <span>2. 2화</span>
+        <h1><br>최무진은 도강재에게 엄중한 벌을 내린다.<br>
+          그러고는 지우를 밖으로 불러낸 무진의 한 마디.<br>
+          오늘 윤지우는 죽었다!<br>
+          몇 년 후, 지우는 새로운 신분으로 경찰에 잠입한다.
+        </h1>
+      </div>
+    </div>
+
+    <div class="three">
+      <img src="img/33.jpg" alt="">
+      <div class="again3_text">
+        <span>3. 3화</span>
+        <h1><br>타깃을 체포하러 출동하는 마수대.<br>
+          지우는 뜻밖의 상황에 당황하지만,
+          이내 서둘러 행동에 나선다.<br>
+          한편 악의에 찬 보스가 이끄는 신흥 마약 조직이<br>
+          무진의 제국을 위협한다.
+        </h1>
+      </div>
+    </div>
+
+    <div class="four">
+      <img src="img/34.jpg" alt="">
+      <div class="again4_text">
+        <span>4. 4화</span>
+        <h1><br>강재가 무진에게 전쟁을 선포했다.<br>
+          이 상황을 기회로 활용하려는 차기호.<br>
+          지우에게서 수상한 낌새를 눈치챈 기호의 지시에,<br>
+          전필도는 은밀하게 지우의 뒤를 밟기 시작한다.
+        </h1>
+      </div>
+    </div>
+
+    <div class="five">
+      <img src="img/35.jpg" alt="">
+      <div class="again5_text">
+        <span>2. 2화</span>
+        <h1><br>죽음의 위기에서 가까스로 탈출한 지우와 필도.<br>
+          이 사건을 계기로 경찰의 칼끝은 강재를 향한다.<br>
+          얼마 후,<br>
+          사무실에서 낯익은 얼굴과 마주친 지우는 불안감을 감추지 못한다.
+        </h1>
+      </div>
+    </div>
+
+    <button class="custom-btn btn-6"><span>PREVIEW</span></button>
+
+  </div>
+</div>
+</div>
+
+<div id="clip">
+<div class="cl">
+<div class="ip1"><iframe width="300" height="200" src="https://www.youtube.com/embed/-NsNHD0LXV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="ip2"><iframe width="300" height="200" src="https://www.youtube.com/embed/gNCKXJyjW4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="ip3"><iframe width="300" height="200" src="https://www.youtube.com/embed/HQbPFYsIu-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="ip4"><iframe width="300" height="200" src="https://www.youtube.com/embed/J9QBLxhFYso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="ip5"><iframe width="300" height="200" src="https://www.youtube.com/embed/B1xrJlU0XZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+</div>
 </div>
 
 
