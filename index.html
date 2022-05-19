@@ -194,9 +194,22 @@
   width: 100%;
 } 
 
-#clip {width: 100%; height: 100%; margin: 0 auto; background-color: royalblue;}
-.cl {width: 1200px; height: 100%; margin: 0 auto; background-color: antiquewhite; display: flex;
-  flex-direction: column; justify-content: space-evenly;}
+
+
+#clip {width: 100%; height: 100%; margin: 0 auto; background-color: #000; display: flex;
+  align-items: center;}
+.banner_wraper { height: 300px; width: 100%; margin: 0 auto; position: absolute;
+  overflow: hidden; display: flex; }
+.banner_wraper img { height: 300px; width: 500px; position: absolute; display: flex; }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -225,6 +238,67 @@
     function closeNav(){
         document.getElementById("myNav").style.width="0%"
     }
+
+
+
+
+
+
+
+
+
+  
+
+//client rolling banner
+window.onload = function() {
+           var bannerLeft=0;
+           var first=1;
+           var last;
+           var imgCnt=0;
+           var $img = $(".banner_wraper img");
+           var $first;
+           var $last;
+
+           $img.each(function(){   // 5px 간격으로 배너 처음 위치 시킴
+               $(this).css("left",bannerLeft);
+               bannerLeft += $(this).width()+10;
+               $(this).attr("id", "banner"+(++imgCnt));  // img에 id 속성 추가
+           });
+
+           
+           if( imgCnt > 9){                //배너 9개 이상이면 이동시킴
+
+
+
+               last = imgCnt;
+
+               setInterval(function() {
+                   $img.each(function(){
+                       $(this).css("left", $(this).position().left-1); // 1px씩 왼쪽으로 이동
+                   });
+                   $first = $("#banner"+first);
+                   $last = $("#banner"+last);
+                   if($first.position().left < -200) {    // 제일 앞에 배너 제일 뒤로 옮김
+                       $first.css("left", $last.position().left + $last.width()+5 );
+                       first++;
+                       last++;
+                       if(last > imgCnt) { last=1; }   
+                       if(first > imgCnt) { first=1; }
+                   }
+               }, 10);   //여기 값을 조정하면 속도를 조정할 수 있다.(위에 1px 이동하는 부분도 조정하면 
+
+//깔끔하게 변경가능하다           
+
+}
+
+};
+
+
+
+
+ 
+
+
 </script>
 
 </head>
@@ -257,10 +331,15 @@
         <a href="#">SHOP</a>
       </div>
     </div>
+
+
   </header>
   <div id="slider">
     <!-- <img src="img/0.jpg" alt=""> -->
   </div>
+
+
+<!-- 소개 -->
   <div id="information">
     <div class="in">
       <div class="im"><img src="img/a.jpg" alt=""></div>
@@ -276,6 +355,8 @@
     </div>
   </div>
 
+
+  <!-- 포스터 -->
 <div id="poster">
 <div class="d"><a href="#">
   <img src="img/7.jpg" alt="">
@@ -289,7 +370,7 @@
 </div>
 
 
-
+<!-- 등장인물 -->
 <div id="Characters">
   <div id="box1">
     <div id="mg" class="bo1" style="background-image: url('img/21.jpg') ; ">
@@ -305,8 +386,9 @@
     <div id="mg" class="bo6" style="background-image: url('img/100.jpg') ; ">
     <h1>Yoon<br>Donghun</h1></div>
   </div>
-
 </div>
+
+<!-- 예고편 -->
 <div id="teaser">
   <div class="teaser_text">
     <p>예고편</p>
@@ -328,6 +410,8 @@
     </div>
   </div>
 </div>
+
+<!-- 재생 -->
 <div id="round">
   <div class="infor"></div>
   <div class="mation">
@@ -400,23 +484,93 @@
 </div>
 </div>
 
+
+<!-- 클립 슬라이드 -->
 <div id="clip">
-<div class="cl">
-<div class="ip1"><iframe width="300" height="200" src="https://www.youtube.com/embed/-NsNHD0LXV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<div class="ip2"><iframe width="300" height="200" src="https://www.youtube.com/embed/gNCKXJyjW4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<div class="ip3"><iframe width="300" height="200" src="https://www.youtube.com/embed/HQbPFYsIu-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<div class="ip4"><iframe width="300" height="200" src="https://www.youtube.com/embed/J9QBLxhFYso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<div class="ip5"><iframe width="300" height="200" src="https://www.youtube.com/embed/B1xrJlU0XZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
+<div class="banner_wraper">
+  <a href="#"><img src="img/70.png"></a>
+  <a href="#"><img src="img/200.jpg"></a>
+  <a href="#"><img src="img/201.jpg"></a>
+  <a href="#"><img src="img/203.jpg"></a>
+  <a href="#"><img src="img/204.jpg"></a>
+  <a href="#"><img src="img/205.jpg"> </a>
+  <a href="#"><img src="img/206.jpg"></a>
+  <a href="#"><img src="img/80.jpg"></a>
+  <a href="#"><img src="img/img (2).jpg"></a>
+  <a href="#"><img src="img/71.png"></a>
 </div>
 </div>
 
+<div id="login">
+<a href="https://front.codes/" class="logo" target="_blank">
+  <img src="https://assets.codepen.io/1462889/fcy.png" alt="">
+</a>
+
+<div class="section">
+  <div class="container">
+    <div class="row full-height justify-content-center">
+      <div class="col-12 text-center align-self-center py-5">
+        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+          <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                <label for="reg-log"></label>
+          <div class="card-3d-wrap mx-auto">
+            <div class="card-3d-wrapper">
+              <div class="card-front">
+                <div class="center-wrap">
+                  <div class="section text-center">
+                    <h4 class="mb-4 pb-3">Log In</h4>
+                    <div class="form-group">
+                      <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                      <i class="input-icon uil uil-at"></i>
+                    </div>	
+                    <div class="form-group mt-2">
+                      <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                      <i class="input-icon uil uil-lock-alt"></i>
+                    </div>
+                    <a href="#" class="btn mt-4">submit</a>
+                                  <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+                      </div>
+                    </div>
+                  </div>
+              <div class="card-back">
+                <div class="center-wrap">
+                  <div class="section text-center">
+                    <h4 class="mb-4 pb-3">Sign Up</h4>
+                    <div class="form-group">
+                      <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                      <i class="input-icon uil uil-user"></i>
+                    </div>	
+                    <div class="form-group mt-2">
+                      <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                      <i class="input-icon uil uil-at"></i>
+                    </div>	
+                    <div class="form-group mt-2">
+                      <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                      <i class="input-icon uil uil-lock-alt"></i>
+                    </div>
+                    <a href="#" class="btn mt-4">submit</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+</div>
 
 
 
 
 
 
+
+
+<!-- 푸터 -->
 <footer>
   <footer>
     <div id="footer_box">
