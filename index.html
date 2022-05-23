@@ -1,627 +1,851 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
     <style>
-    * {margin: 0 ; padding: 0;}
-    html, body {width: 100%; height: 100%;}
-    ul, li, ol {list-style: none;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {width: 100%; height: 50px; margin: 0; background-color: #000; }
-    header > .small {width: 100%;  display: flex; align-items: center; justify-content: space-around; background-color: #000;  }
-    header a {padding: 15px; text-decoration: none; color: #666;}
-    header a:hover {background-color: #333; color: #666;}
+        body {
+            height: 100%;
+            
+            font-size: 10px;
+        }
 
-    .logo {width: 80px; line-height: 50px; background-color: #000; color: #666; text-align: center;}
+        html {
+            height: 100%;
+        }
 
-    #b {display: none;}
-    #a {display: block;}
+        body::-webkit-scrollbar {
+            display: none;
+        }
 
-    #myNav {display: none;}
+        ul,
+        li,
+        ol {
+            list-style: none;
+        }
 
-    #slider {width: 100%; height: calc(100% - 50px); margin: 0 auto;  filter: brightness(50%); 
-      background-image: url(img/90.png); background-position: center; background-size: cover;
-      background-repeat: no-repeat;}
-    /* #slider img {width: 100%; height: 100%; margin: 0 auto;  filter: brightness(50%); } */
+        a {
+            text-decoration: none;
+            
+        }
 
-    #information {width: 100%; height: 100%; margin: 0 auto; background-color: pink;}
-    #information > .in {width: 100%; height: 100%; margin: 0 auto; display: flex;}
-    #information > .in > .im {width: 50%; height: 100%; display: flex; align-items: center; justify-content: space-around; } 
-    #information > .in > .im img {width: 100%; height: 100%; margin: 0 auto; display: flex; justify-content: center; }
-    #information > .in > .text {width: 50%; height: 100%;  margin: 0 auto; background-color: #000; display: flex; }
-    #information > .in > .text > p { text-align: center; font-size: 16px; color: #666; display: flex; justify-content: center; align-items: center; margin: 0 auto;}
+        table, tr, th ,td {margin:0; padding:0; }
 
-    #poster {width: 100%; height: auto; margin: 0 auto; background-color: #000; display: flex; }
-    #poster img {width: 100%; }
-    .d {width: 33%; height: 100%; margin: 0 auto; display: flex;}
-    .e {width: 33%; height: 100%; margin: 0 auto; display: flex;}
-    .f {width: 33%; height: 100%; margin: 0 auto; display: flex;}
-    /* #poster img {width: 33%; height: 100%; margin: 0 auto; margin-left: 2px; } */
+        /* button {border: none;} */
 
-    #Characters {width: 100%; height: 150%; margin: 0 auto; background-color: #000; display: flex; }
-    #Characters > #box1 {width: 1200px; height: 100%; background-color: #000; margin: auto; 
-    display: flex; flex-wrap: wrap; align-items: center; flex-direction: row; justify-content: space-evenly; }
-    #Characters > #box1 > #mg {width: 350px; height: 350px; background-size: cover; display: flex;
-    outline:10px solid #ccc; outline-offset: -50px; filter: brightness(50%); }
-     
-    /* #Characters > #box1 > #mg img {width: 100%; height: 100%;} */
-  
-    #mg h1 {font-size: 60px; text-align: center; color: #ccc; margin: 0 auto;
-      display: flex;  flex-direction: column; justify-content: center; }
 
-    #teaser {width: 100%; height: 100%; margin: 0 auto; background-color: #000;  }
-    .teaser_text {width: 1200px; height: 30%; margin: auto; text-align: center;
-    color: #666; background-color: #000; font-size: 24px; }
-    .teaser_text > p {height: 100%; font-size: 24px; margin: auto; text-align: center; display: flex; justify-content: center; align-items: center;}
-    .teaser_mv {width: 1200px; height: 70%; margin: 0 auto; background-color: #000; display: flex; }
-    .teaser_mv > .tea {width: 1200px; height: 300px;  margin: 0 auto; background-color: #000;
-      display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly;}
-    /* .teaser_mv > .ser {width: 600px; height: 100%; float: right; margin: 0 auto; background-color: palegoldenrod; display: flex; } */
-  /* .tea > img {width: 590px; height: 300px; margin: 0 auto; display: flex;  flex-direction: column;
-    justify-content: center; }  */
+        #wrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
 
-/* 
-  .tea > video {width: 535px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column;
-    justify-content: center; } 
-    .ser > video {width: 535px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column;
-    justify-content: center; }  */
+        #wrap>.wrap_af {
+            content: "";
+            position: fixed;
+            display: block;
+            width: 100%;
 
-    .teaser_mv > video {width: 535px; height: 300px; margin: 0 auto;  display: flex;
-      flex-direction: column; justify-content: center; } 
-    /* .cer > img {width: 590px; height: 300px; margin: 0 auto;  display: flex;  flex-direction: column;
-    justify-content: center;} */
-  /* .cer > img:hover {opacity: 1;} */
-    /* .tea > img:hover {opacity: 0;} */
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            z-index: 20;
+        }
 
-    #teaser_text2 > p:nth-child(1) {margin-left: -444px; margin-top: 20px; color: #666;}
-    #teaser_text2 > p:nth-child(2) {text-align: center; margin-top: -20px; color: #666;}
+        /*오른쪽 버튼*/
 
-    #round {width: 100%; height: 100%; margin: 0 auto; background-color: #000;}
-    .infor {width: 50%; height: 100%; margin: 0 auto; background-image: url(img/30.jpg);
-      background-position: center; background-size: cover; float: left;}
-    .infor img {width: 100%; height: 100%; margin: 0 auto;}
-    .mation {width: 50%; height: 100%; margin: 0 auto; background-color: #000; float: right;
-      display: flex; flex-direction: column; justify-content: space-evenly;}
-   
+        #dot {
+            width: 80px;
+            height: 250px;
+            position: fixed;
+            justify-content: center;
 
-    .one {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex;}
-    .one:hover {opacity: 0.5;}
-    .one img {width: 40%; height: 100%; margin: 0; float: left;}
-    .again1_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
-    .again1_text > span {font-size: 18px; text-align: center; color: #666;}
-    .again1_text > h1 {font-size: 14px; text-align: center; color: #666;}
+            align-items: center;
+            display: flex;
 
-    .two {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex;}
-    .two:hover {opacity: 0.5;}
-    .two img {width: 40%; height: 100%; margin: 0; float: left;}
-    .again2_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
-    .again2_text > span {font-size: 18px; text-align: center;}
-    .again2_text > h1 {font-size: 14px; text-align: center;}
+            top: 50%;
+            right: 0px;
+            transform: translatey(-50%);
+            z-index: 100;
+        }
 
-    .three {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex; }
-    .three:hover {opacity: 0.5;}
-    .three img {width: 40%; height: 100%; margin: 0; float: left;}
-    .again3_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
-    .again3_text > span {font-size: 18px; text-align: center;}
-    .again3_text > h1 {font-size: 14px; text-align: center;}
+        #dot>ul {
+            width: 40px;
+            height: 220px;
+        }
 
-    .four {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex;}
-    .four:hover {opacity: 0.5;}
-    .four img {width: 40%; height: 100%; margin: 0; float: left;}
-    .again4_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
-    .again4_text > span {font-size: 18px; text-align: center;}
-    .again4_text > h1 {font-size: 14px; text-align: center;}
-    
-    .five {width: 80%; height: 15%; margin: 0 auto; background-color: #000; display: flex;}
-    .five:hover {opacity: 0.5;}
-    .five img {width: 40%; height: 100%; margin: 0; float: left;}
-    .again5_text {width: 60%; height: 100%; margin: 0 auto; float: right; color: #666; text-align: center;}
-    .again5_text > span {font-size: 18px; text-align: center;}
-    .again5_text > h1 {font-size: 14px; text-align: center;}
+        #dot li {
+            width: 20px;
+            height: 20px;
+            position: relative;
 
-     
-    .btn-6 { width: 200px; height: 40px; margin: 0 auto;
-   background: #fff;
-  color: #000;
-  line-height: 42px;
-  padding: 0;
-  border: none;
-}
-.btn-6 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.btn-6:before,
-.btn-6:after {
-  position: absolute;
-  content: "";
-  height: 0%;
-  width: 2px;
-  background: #fff;
-}
-.btn-6:before {
-  right: 0;
-  top: 0;
-  transition: all 500ms ease;
-}
-.btn-6:after {
-  left: 0;
-  bottom: 0;
-  transition: all 500ms ease;
-}
-.btn-6:hover{
-  color: #fff;
-  background: transparent;
-}
-.btn-6:hover:before {
-  transition: all 500ms ease;
-  height: 100%;
-}
-.btn-6:hover:after {
-  transition: all 500ms ease;
-  height: 100%;
-}
-.btn-6 span:before,
-.btn-6 span:after {
-  position: absolute;
-  content: "";
-  background: #fff;
-}
-.btn-6 span:before {
-  left: 0;
-  top: 0;
-  width: 0%;
-  height: 2px;
-  transition: all 500ms ease;
-}
-.btn-6 span:after {
-  right: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  transition: all 500ms ease;
-}
-.btn-6 span:hover:before {
-  width: 100%;
-}
-.btn-6 span:hover:after {
-  width: 100%;
-} 
+            display: block;
+            margin: 10px auto;
+            border-radius: 50%;
+
+            box-shadow: -0px 0px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        #dot li a {
+            background: rgba(255, 255, 255, 0.7);
+
+            transition: all 0.3s ease-in-out;
+
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border-radius: 50%;
+
+            background-color: #fff;
+            background: rgba(255, 255, 255, 0.5);
+
+            cursor: pointer;
+            position: absolute;
+        }
+
+        #dot ul .active {
+            box-shadow: 0 0 0 2px #0cdaff;
+        }
 
 
 
-#clip {width: 100%; height: 100%; margin: 0 auto; background-color: #000; display: flex;
-  align-items: center;}
-.banner_wraper { height: 300px; width: 100%; margin: 0 auto; position: absolute;
-  overflow: hidden; display: flex; }
-.banner_wraper img { height: 300px; width: 500px; position: absolute; display: flex; }
+        #dot ul li:nth-of-type(2).active {
+            box-shadow: 0 0 0 2px #0189ff;
+        }
+
+        #dot ul li:nth-of-type(3).active {
+            box-shadow: 0 0 0 2px #f0a91b;
+        }
+
+        #dot ul li:nth-of-type(4).active {
+            box-shadow: 0 0 0 2px #fff;
+        }
+
+        #dot ul li:nth-of-type(5).active {
+            box-shadow: 0 0 0 2px #d6130f;
+        }
+
+        #dot ul li:nth-of-type(6).active {
+            box-shadow: 0 0 0 2px #a0ef08;
+        }
+
+        #dot ul li:nth-of-type(7).active {
+            box-shadow: 0 0 0 2px #9517ff;
+        }
+
+
+
+        .active a {
+            transform: scale(0.4);
+        }
+
+
+
+        #dot li:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+
+
+        section {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+
+
+        /*페이지*/
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin: 0 auto;
+            background: #9420ff;
+        }
+
+        /*p0*/
+
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #9420ff;
+        }
+
+
+
+        /*바탕 포인트 컬러*/
+
+        .background {
+            width: px;
+            height: px;
+            position: absolute;
+            top: 10%;
+        }
+
+        section .page:not(:nth-of-type(2n)) .con_wrap .background {
+            left: 0;
+        }
+
+        section .page:nth-of-type(2n) .con_wrap .background {
+            right: 0
+        }
+
+        .p01 {
+            background: #9420ff;
+        }
+
+        .p02 {
+            background: #f81895;
+        }
+
+        .p03 {
+            background: #004ffe;
+        }
+
+        .p04 {
+            background: #004ffe;
+        }
+
+        .p05 {
+            background: #f81895;
+        }
+
+
+
+        /*pf_bot*/
+
+        .pf_bot {
+            width: 100%;
+            height: 100%;
+            padding: 50px 0;
+            position: relative;
+        }
+
+        /* 1페이지 */
+
+        #header {width: 100%; height: 50px; margin: 0 auto; 
+             color: #f81895; list-style: none; font-size: 20px; display: flex;
+             justify-content: space-around; font-family: 'Nanum Myeongjo', serif;}
+
+        .logo {width: 200px; height: 50px; float: left; color: #f81895;
+             text-align: center;}
+        .logo a {color: #f81895; text-align: center; }
+        .logo p {margin-top: 20px; }
+
+        nav {width: 500px; height: 50px; text-align: center; margin-left: 900px;
+             display: flex; float: left;  justify-content: center; color: #f81895;}
+
+            nav ul {display: flex; margin-top: 20px; color: #f81895;}
+            nav ul li { margin-left: 20px; color: #f81895;}
+            nav a {color: #f81895;}
+
+        .login {width: 200px; height: 50px; float: right; color: #f81895;
+             text-align: center; }
+        .login a {color: #f81895; text-align: center; }
+        .login p {margin-top: 20px;}
+
+        #slider {width: 80%; height: calc(100% - 50px);  margin: 0 auto;
+            display: flex; z-index: 1; position: relative; }
+        .ma > p {color: #f81895; font-size: 120px; position: absolute; visibility: visible;
+            z-index: 3; top: 50px; left: -10px; letter-spacing: -7px; line-height: 90px ;
+            font-family: 'Nanum Myeongjo', serif; text-align: center;}
+        .main {width: 90%; height: 90%; background-color: #0cdaff; margin: auto; 
+          margin-bottom: 0px;  display: flex; z-index: 2;
+        background-image: url(img/0.png); background-position: center; background-size: cover;}
+        .in > p {color: #f81895; font-size: 120px; position: absolute; visibility: visible;
+            z-index: 3; bottom: -15px; right: -10px; font-family: 'Nanum Myeongjo', serif;}
+        
+        
+
+      /* 2페이지 */
+
+      .box1 {width: 50%; height: 100%; margin: 0;  float: left;
+        z-index: 1; position: relative;}
+      .box1 img {width: 500px; height: 500px;}
+      .a {z-index: 2; top: 150px; position: absolute; }
+      .b {z-index: 3; top: 300px; left: 300px; position: absolute;}
+
+
+      .box2 {width: 50%; height: 100%; margin: 0;  float: right; display: flex; }
+      .bo1 {width: 100%; height: 50%; margin: auto 0;  display: flex;
+        flex-direction: column; justify-content: space-evenly; font-family: 'Nanum Myeongjo', serif;}
+      .bo1 > p:nth-child(1) {font-size: 18px;}
+      .bo1 > p:nth-child(2) {font-size: 28px; font-weight: bold;}
+      .bo1 > p:nth-child(3) {font-size: 18px;}
+
+      .btn1 {width: 100px; height: 50px; background-color: #0cdaff; color: #fff;}
+
+
+
+        /* 3페이지 */
+        #back {width: 100%; height: 100%; margin: 0 auto; }
+        .on {width: 25%; height: 100%; margin: 0 auto; float: left;}
+        .on p {-webkit-transform: rotate(270deg); -ms-transform: rotate(90deg); color: #fff;
+            font-size: 160px; margin-top: 633px; margin-bottom: 100px;
+            font-family: 'Nanum Myeongjo', serif; justify-content: center; justify-items: center;}
+
+        .tw {width: 75%; height: 100%; margin: 0 auto;  float: right;}
+        .b1 {width: 100%; height: 30%; margin: 0 auto;  text-align: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;}
+        .b1 > p:nth-child(1) {font-size: 18px;}
+        .b1 > p:nth-child(2) {font-size: 28px; font-weight: bold;}
+      
+        .b2 {width: 100%; height: 70%; margin: 0 auto;  display: flex;}
+        .btn5 {width: 150px; height: 30px; margin: 0 auto; }
+
+        .ibox1 {width: 400px; height: 700px; margin: 0 auto; display: flex; flex-direction: column;
+            flex-wrap: nowrap; justify-content: space-evenly; align-items: center;}
+        .ibox1 img {width: 350px; height: 350px; margin: 0 auto;}
+        .ibox1 p {text-align: center; font-size: 16px;}
+        .ibox1 span {text-align: center; font-size: 16px; font-style: italic;}
+
+        .ibox2 {width: 400px; height: 700px; margin: 0 auto; display: flex; flex-direction: column;
+            flex-wrap: nowrap; justify-content: space-evenly; align-items: center;}
+        .ibox2 img {width: 350px; height: 350px; margin: 0 auto;}
+        .ibox2 p {text-align: center; font-size: 16px;}
+        .ibox2 span {text-align: center; font-size: 16px; font-style: italic;}
+
+        .ibox3 {width: 400px; height: 700px; margin: 0 auto; display: flex; flex-direction: column; 
+            flex-wrap: nowrap; justify-content: space-evenly; align-items: center;}
+        .ibox3 img {width: 350px; height: 350px; margin: 0 auto;}
+        .ibox3 p {text-align: center; font-size: 16px;}
+        .ibox3 span {text-align: center; font-size: 16px; font-style: italic;}
+
+
+
+        /* 4 페이지 */
+        #wa {width: 100%; height: 100%; margin: 0 auto; }
+
+        .le {width: 50%; height: 100%; margin: 0 auto; float: left; display: flex;}
+        .le img {width: 65%; height: 80%; margin: auto; }
+
+        .ri {width: 50%; height: 100%; margin: 0 auto; float: right; display: flex;}
+        .ri> .ri_tablebox {width: 100%; height: 50%; margin: auto; }
+        
+        .ri_tablebox table th {width:80px; border-bottom:1px solid #eee; color:#eee}
+
+        .ri_tablebox table td:first-of-type {width:770px; border-bottom:1px solid #eee;}
+
+        .ri_tablebox table td:first-of-type > a {color:#eee;}
+
+        .ri_tablebox table td:nth-of-type(2) {width:80px; text-align:center;
+        border-bottom:1px solid #eee;}
+
+        .ri_tablebox table td:nth-of-type(3) {width:120px; text-align:center; 
+        border-bottom:1px solid #eee;}
+
+        .ri_tablebox table td:last-of-type {width:150px; text-align:center; 
+        border-bottom:1px solid #eee;}
+
+        .ri > .ri_tablebox > button {float:right; margin:25px 0px; width:120px; 
+        height:30px; color:#fff; font-size:12px; background-color:#333; 
+        border:1px solid #ddd;}
+
+        .ri > .ri_tablebox > button:hover {cursor:pointer;}
+
+        .ri > .ri_tablebox > table {display:flex; margin:0px auto; 
+        border-top:1px solid #eee; line-height:50px; width:700px; font-size:13px; 
+        color:#eee;}
+
+
+       /* 5 페이지 */
+       #bg {width: 100%; height: 100%; margin: 0 auto; background-image: url('img/30.jpg');
+    background-position: center; background-size: cover; display: flex; align-items: center;}
+       .rg {width: 80%; height: 80%; margin: 0 auto; background-color: #f81895; display: flex; flex-direction: column;}
+       .te1 {width: 100%; height: 30%; margin: 0 auto; background-color: #0cdaff; display: flex;}
+       .i1 {width: 80%; height: 70%; margin: 0px; background-color: #9420ff; display: flex;}
+       .i1 img {width: 400px; height: 500px; margin: 0px;}
+       .i2 {width: 20%; height: 70%; background-color: #333; display: flex;}
+       .i2 img {width: 50px; height: 50px;}
+       
 
 
 
 
 
 
-
-
-
-
-
-
-
-    
-    footer{width: 100%; height: 320px; background-color: #000; text-align: center;}
-    #footer_box{width: 1200px; height: 320px; margin: 0 auto;}
-
-    #footer_box img{width: 230px; height: 100px;}
-    #footer_ul{width: 1000px; height: 300px; margin: 0 auto; padding-top: 15px;
-           display: flex; justify-content: space-around; align-items: center; text-align: center;}
-    #footer_ul{width: 100%;}
-
-    #footer_ul li{ font-size: 14px; color: #666;}
-    #footer_ul li:nth-of-type(2n){margin-bottom: 15px;}
-    
     </style>
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-    function openNav(){
-        document.getElementById("myNav").style.width="100%";
-    }
-    function closeNav(){
-        document.getElementById("myNav").style.width="0%"
-    }
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"> </script>
 
 
 
+    <script>
+
+        //js/dot.js
+
+        $(function () {
+
+            var dot = $("#dot ul li");
+
+            var contents = $(".page_wrap>.page");
 
 
 
+            dot.click(function (e) {
+
+                e.preventDefault();
+
+                var target = $(this);
+
+                var index = target.index();
+
+                var section = contents.eq(index);
+
+                var offset = section.offset().top;
+
+                $("html,body").animate({ scrollTop: offset }, 600);
+
+            });
 
 
 
-  
+            $(window).scroll(function () {
 
-//client rolling banner
-window.onload = function() {
-           var bannerLeft=0;
-           var first=1;
-           var last;
-           var imgCnt=0;
-           var $img = $(".banner_wraper img");
-           var $first;
-           var $last;
-
-           $img.each(function(){   // 5px 간격으로 배너 처음 위치 시킴
-               $(this).css("left",bannerLeft);
-               bannerLeft += $(this).width()+10;
-               $(this).attr("id", "banner"+(++imgCnt));  // img에 id 속성 추가
-           });
-
-           
-           if( imgCnt > 9){                //배너 9개 이상이면 이동시킴
+                var wScroll = $(this).scrollTop();
 
 
 
-               last = imgCnt;
+                if (wScroll >= contents.eq(0).offset().top) {
 
-               setInterval(function() {
-                   $img.each(function(){
-                       $(this).css("left", $(this).position().left-1); // 1px씩 왼쪽으로 이동
-                   });
-                   $first = $("#banner"+first);
-                   $last = $("#banner"+last);
-                   if($first.position().left < -200) {    // 제일 앞에 배너 제일 뒤로 옮김
-                       $first.css("left", $last.position().left + $last.width()+5 );
-                       first++;
-                       last++;
-                       if(last > imgCnt) { last=1; }   
-                       if(first > imgCnt) { first=1; }
-                   }
-               }, 10);   //여기 값을 조정하면 속도를 조정할 수 있다.(위에 1px 이동하는 부분도 조정하면 
+                    dot.css({ "background": "rgba(255,255,255,0.1)" });
 
-//깔끔하게 변경가능하다           
+                    dot.find("a").css({ "background": "rgba(255,255,255,0.5)" });
 
-}
+                    dot.removeClass("active");
 
-};
+                    dot.eq(0).addClass("active");
+
+                    dot.eq(0).find("a").css({ "background": "#0cdaff" });
+
+                }
+
+                if (wScroll >= contents.eq(1).offset().top) {
+
+                    dot.css({ "background": "rgba(0,0,0,0.7)" });
+
+                    dot.find("a").css({ "background": "rgba(0,0,0,0.5)" });
+
+                    dot.removeClass("active");
+
+                    dot.eq(1).addClass("active");
+
+                    dot.eq(1).find("a").css({ "background": "#0189ff" });
+
+                }
+
+                if (wScroll >= contents.eq(2).offset().top) {
+
+                    dot.removeClass("active");
+
+                    dot.find("a").css({ "background": "rgba(0,0,0,0.5)" });
+
+                    dot.eq(2).addClass("active");
+
+                    dot.eq(2).find("a").css({ "background": "#f0a91b" });
+
+                }
+
+                if (wScroll >= contents.eq(3).offset().top) {
+
+                    dot.removeClass("active");
+
+                    dot.find("a").css({ "background": "rgba(0,0,0,0.5)" });
+
+                    dot.eq(3).addClass("active");
+
+                    dot.eq(3).find("a").css({ "background": "#fff" });
+
+                }
+
+                if (wScroll >= contents.eq(4).offset().top) {
+
+                    dot.removeClass("active");
+
+                    dot.find("a").css({ "background": "rgba(0,0,0,0.5)" });
+
+                    dot.eq(4).addClass("active");
+
+                    dot.eq(4).find("a").css({ "background": "#d6130f" });
+
+                }
+
+                if (wScroll >= contents.eq(5).offset().top) {
+
+                    dot.removeClass("active");
+
+                    dot.find("a").css({ "background": "rgba(0,0,0,0.5)" });
+
+                    dot.eq(5).addClass("active");
+
+                    dot.eq(5).find("a").css({ "background": "#a0ef08" });
+
+                }
+
+                if (wScroll >= contents.eq(6).offset().top) {
+
+                    dot.removeClass("active");
+
+                    dot.find("a").css({ "background": "rgba(0,0,0,0.5)" });
+
+                    dot.eq(6).addClass("active");
+
+                    dot.eq(6).find("a").css({ "background": "#9517ff" });
+
+                }
 
 
 
+            });
 
- 
 
 
-</script>
+            return false;
+
+        });
+
+
+
+        //js/side.js
+
+        $(function () {
+
+
+
+            $('.wrap_af').hide();
+
+
+
+            $(".fa-bars").click(function () {
+
+                $("#side").animate({ left: '0' }, 500);
+
+                $(this).fadeOut();
+
+                $('.wrap_af').fadeIn();
+
+            });
+
+
+
+            $(".fa-chevron-left").click(function () {
+
+                $("#side").animate({ left: '-310' }, 500);
+
+                $(".fa-bars").fadeIn();
+
+                $('.wrap_af').fadeOut();
+
+            });
+
+
+
+        });
+
+
+
+        //js/mousewheel.js
+
+        $(function () {
+
+            var win_h = $(window).height();
+
+            $('.page').each(function (index) {
+
+                $(this).attr("data-index", win_h * index);
+
+            });
+
+
+
+            $('.page').on("mousewheel", function (e) {
+
+                var pagePos = parseInt($(this).attr("data-index"));
+
+                if (e.originalEvent.wheelDelta >= 0) {
+
+                    $("html,body").stop().animate({ scrollTop: pagePos - win_h });
+
+                    return false;
+
+                } else if (e.originalEvent.wheelDelta < 0) {
+
+                    $("html,body").stop().animate({ scrollTop: pagePos + win_h });
+
+                    return false;
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 </head>
 
 <body>
+    <div id="wrap">
 
-  <header>
-    <div class="small">
-      <div class="logo">logo</div>
+        <div class="wrap_af"></div>
 
-      <div id="a">
-        <a href="#">Team</a>
-        <a href="#">Work</a>
-        <a href="#">Price</a>
-        <a href="#">Contact</a>
+        <!--오른쪽 슬라이드 버튼-->
 
-      </div>
-      <img src="img/i.png" id="b" onclick="openNav()">
-    </div>
-    <div id="myNav" class="overlay">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+        <div id="dot">
 
-      <div class="overlay-content">
-        <a href="#">HOME</a>
-        <a href="#">PAGES</a>
-        <a href="#">SERVICES</a>
-        <a href="#">EVENT</a>
-        <a href="#">GALLERY</a>
-        <a href="#">BLOG</a>
-        <a href="#">SHOP</a>
-      </div>
-    </div>
+            <ul>
 
+                <li><a href="#p0"></a></li>
 
-  </header>
-  <div id="slider">
-    <!-- <img src="img/0.jpg" alt=""> -->
-  </div>
+                <li><a href="#p1"></a></li>
 
+                <li><a href="#p2"></a></li>
 
-<!-- 소개 -->
-  <div id="information">
-    <div class="in">
-      <div class="im"><img src="img/a.jpg" alt=""></div>
-      <div class="text">
-        <p>어느날, 집앞에서 정체를 알 수 없는 누군가에게 아빠가 무참히 살해당한다.<br>
-          아빠를 죽인 범인을 찾아내 직접 죽여버리겠다고 다짐한 지우,
-          아빠가 소속되어있던 범죄조직의 보스 최무진을 찾아간 지우는 <br>
-          그가 이끄는 악명높은 마약조직의 멤버로 들어가게 된다.<br>
-          새로운 신분을 얻게 되고 최무진의 지시에 따라 경찰쪽의 스파이로 잠입한 지우에게 점차 펼쳐지는 냉혹한 범죄세계와<br>
-          그녀의 복수를 그려낸 액션 누아르 넷플릭스 시리즈
-        </p>
-      </div>
-    </div>
-  </div>
+                <li><a href="#p3"></a></li>
 
+                <li><a href="#p4"></a></li>
 
-  <!-- 포스터 -->
-<div id="poster">
-<div class="d"><a href="#">
-  <img src="img/7.jpg" alt="">
-</a></div>
-<div class="e"><a href="#">
-  <img src="img/8.jpg" alt="">
-</a></div>
-<div class="f"><a href="#">
-  <img src="img/9.jpg" alt="">
-</a></div>
-</div>
+                <li><a href="#p5"></a></li>
 
+                <li><a href="#p6"></a></li>
 
-<!-- 등장인물 -->
-<div id="Characters">
-  <div id="box1">
-    <div id="mg" class="bo1" style="background-image: url('img/21.jpg') ; ">
-    <h1>Choi<br>Moojin</h1></div>
-    <div id="mg" class="bo2" style="background-image: url('img/22.jpg') ; ">
-    <h1>Yoon<br>Jiwoo</h1></div>
-    <div id="mg" class="bo3" style="background-image: url('img/13.jpg') ; ">
-    <h1>Jeon<br>Pildo</h1></div>
-    <div id="mg" class="bo4" style="background-image: url('img/14.jpg') ; ">
-    <h1>Jeong<br>Taeju</h1></div>
-    <div id="mg" class="bo5" style="background-image: url('img/23.jpg') ; ">
-    <h1>Do<br>Gangjae</h1></div>
-    <div id="mg" class="bo6" style="background-image: url('img/100.jpg') ; ">
-    <h1>Yoon<br>Donghun</h1></div>
-  </div>
-</div>
+            </ul>
 
-<!-- 예고편 -->
-<div id="teaser">
-  <div class="teaser_text">
-    <p>예고편</p>
-  </div>
-  <div class="teaser_mv">
-    <div class="tea">
-      <video controls="controls" poster="img/maxresdefault(5).png" width="535px" height="300px">
-        <source src="video/마이네임-공식예고편-넷플릭스.mp4" type="audio/mp4">
-      </video>
-      <div class="ser">
-        <video controls="controls" poster="img/maxresdefault.png" width="535px" height="300px">
-          <source src="video/마이네임-공식티저예고편-넷플릭스.mp4" type="audio/mp4">
-        </video>
-        <div id="teaser_text2">
-          <p>마이 네임 | 공식 예고편 | 넷플릭스</p>
-          <p>마이 네임 | 공식 티저 예고편 | 넷플릭스</p>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- 재생 -->
-<div id="round">
-  <div class="infor"></div>
-  <div class="mation">
-
-    <div class="one">
-      <img src="img/31.jpg" alt="">
-      <div class="again1_text">
-        <span>1. 1화</span>
-        <h1><br>최악의 생일이었다.<br>
-          생일을 축하해주러 찾아온 아빠의 죽음을 눈앞에서 목격한 윤지우.<br>
-          복수에 혈안이 된 그녀는 무모한 행동도 서슴지 않는다.<br>
-          범인을 찾을 가능성만 있다면.
-        </h1>
-      </div>
-
-    </div>
-
-    <div class="two">
-      <img src="img/32.jpg" alt="">
-      <div class="again2_text">
-        <span>2. 2화</span>
-        <h1><br>최무진은 도강재에게 엄중한 벌을 내린다.<br>
-          그러고는 지우를 밖으로 불러낸 무진의 한 마디.<br>
-          오늘 윤지우는 죽었다!<br>
-          몇 년 후, 지우는 새로운 신분으로 경찰에 잠입한다.
-        </h1>
-      </div>
-    </div>
-
-    <div class="three">
-      <img src="img/33.jpg" alt="">
-      <div class="again3_text">
-        <span>3. 3화</span>
-        <h1><br>타깃을 체포하러 출동하는 마수대.<br>
-          지우는 뜻밖의 상황에 당황하지만,
-          이내 서둘러 행동에 나선다.<br>
-          한편 악의에 찬 보스가 이끄는 신흥 마약 조직이<br>
-          무진의 제국을 위협한다.
-        </h1>
-      </div>
-    </div>
-
-    <div class="four">
-      <img src="img/34.jpg" alt="">
-      <div class="again4_text">
-        <span>4. 4화</span>
-        <h1><br>강재가 무진에게 전쟁을 선포했다.<br>
-          이 상황을 기회로 활용하려는 차기호.<br>
-          지우에게서 수상한 낌새를 눈치챈 기호의 지시에,<br>
-          전필도는 은밀하게 지우의 뒤를 밟기 시작한다.
-        </h1>
-      </div>
-    </div>
-
-    <div class="five">
-      <img src="img/35.jpg" alt="">
-      <div class="again5_text">
-        <span>2. 2화</span>
-        <h1><br>죽음의 위기에서 가까스로 탈출한 지우와 필도.<br>
-          이 사건을 계기로 경찰의 칼끝은 강재를 향한다.<br>
-          얼마 후,<br>
-          사무실에서 낯익은 얼굴과 마주친 지우는 불안감을 감추지 못한다.
-        </h1>
-      </div>
-    </div>
-
-    <button class="custom-btn btn-6"><span>PREVIEW</span></button>
-
-  </div>
-</div>
-</div>
+        <header>
 
 
-<!-- 클립 슬라이드 -->
-<div id="clip">
-<div class="banner_wraper">
-  <a href="#"><img src="img/70.png"></a>
-  <a href="#"><img src="img/200.jpg"></a>
-  <a href="#"><img src="img/201.jpg"></a>
-  <a href="#"><img src="img/203.jpg"></a>
-  <a href="#"><img src="img/204.jpg"></a>
-  <a href="#"><img src="img/205.jpg"> </a>
-  <a href="#"><img src="img/206.jpg"></a>
-  <a href="#"><img src="img/80.jpg"></a>
-  <a href="#"><img src="img/img (2).jpg"></a>
-  <a href="#"><img src="img/71.png"></a>
-</div>
-</div>
 
-<div id="login">
-<a href="https://front.codes/" class="logo" target="_blank">
-  <img src="https://assets.codepen.io/1462889/fcy.png" alt="">
-</a>
+        </header>
 
-<div class="section">
-  <div class="container">
-    <div class="row full-height justify-content-center">
-      <div class="col-12 text-center align-self-center py-5">
-        <div class="section pb-5 pt-5 pt-sm-2 text-center">
-          <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
-                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-                <label for="reg-log"></label>
-          <div class="card-3d-wrap mx-auto">
-            <div class="card-3d-wrapper">
-              <div class="card-front">
-                <div class="center-wrap">
-                  <div class="section text-center">
-                    <h4 class="mb-4 pb-3">Log In</h4>
-                    <div class="form-group">
-                      <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-                      <i class="input-icon uil uil-at"></i>
-                    </div>	
-                    <div class="form-group mt-2">
-                      <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-                      <i class="input-icon uil uil-lock-alt"></i>
-                    </div>
-                    <a href="#" class="btn mt-4">submit</a>
-                                  <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
-                      </div>
-                    </div>
-                  </div>
-              <div class="card-back">
-                <div class="center-wrap">
-                  <div class="section text-center">
-                    <h4 class="mb-4 pb-3">Sign Up</h4>
-                    <div class="form-group">
-                      <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
-                      <i class="input-icon uil uil-user"></i>
-                    </div>	
-                    <div class="form-group mt-2">
-                      <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-                      <i class="input-icon uil uil-at"></i>
-                    </div>	
-                    <div class="form-group mt-2">
-                      <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-                      <i class="input-icon uil uil-lock-alt"></i>
-                    </div>
-                    <a href="#" class="btn mt-4">submit</a>
-                      </div>
-                    </div>
-                  </div>
+
+
+        <section class="page_wrap">
+
+            <!-- page 00 -->
+
+            <div class="page p00 section" id="particles-js">
+                <div id="header">
+                    <div class="logo"><a href="#"><p>CIYT POP</p></a></div>
+
+                    <nav>
+                    <ul>
+                        <li><a href="#">CITY</a></li>
+                        <li><a href="#">POP</a></li>
+                        <li><a href="#">LIST</a></li>
+                    </ul>
+                   </nav>
+
+                   <div class="login"><a href="#"><p>LOGIN</p></a></div>
                 </div>
-              </div>
+
+                <div id="slider">
+                    <div class="ma"><p>CITY<br> POP</p></div>
+                    <div class="main">
+                    
+                    </div>
+                    <div class="in"><p>List</p></div>
+                </div>
             </div>
-          </div>
-        </div>
+
+            <!-- 01 PF-->
+
+            <article class="page p05 section" id="p1">
+                <div class="box1">
+                    <img src="img/1.jpg" class="a" alt="">
+                    <img src="img/2.jpg" class="b" alt="">
+                </div>
+                <div class="box2">
+                    <div class="bo1">
+                        <p><i>70's and 80's</i></p>
+                        <p>
+                    City pop refers to music released in Japan with<br>
+                    a musical composition in the 70s and 80s<br>
+                    that share urban characteristics.</p>
+                    <p><i>
+                        Electric guitar, bass guitar, synthesizer, drum, and saxophone are the<br> 
+                        main musical instruments, and other instruments are employed as needed.</i></p>
+                    
+                        <button class="btn1">look</button>
+                    </div>
+                    
+                </div>
+
+            </article>
+
+            <!-- 02 PF-->
+
+            <article class="page p04 section" id="p5">
+                <div id="back">
+                    <div class="on">
+                        <p>CHARMING</p>
+                    </div>
+                    <div class="tw">
+                        <div class="b1">
+                            <p>70's and 80's</p>
+                            <p><i>Baby it’s just you and me<br>
+                                    You’re part of my destiny</i></p>
+            
+                        </div>
+                        <div class="b2">
+            
+                            <div class="ibox1">
+                                <a href="#"><img src="img/10.jpg" alt=""></a>
+                                <p>STELLA</p>
+                                <span>Cuz your smile takes me places I’ve never been<br>
+                                    Baby it’s just you and me<br>
+                                    You’re part of my destiny
+                                </span>
+                                <button class="btn5">TWILIGHT</button>
+                            </div>
+            
+                            <div class="ibox2">
+                                <a href="#"><img src="img/11.jpg" alt=""></a>
+                                <p>MOONLIGHT</p>
+                                <span>It could travel continents<br>
+                                    In our love I’m confident </span>
+                                <button class="btn5">SERENDIPITY</button>
+                            </div>
+            
+                            <div class="ibox3">
+                                <a href="#"><img src="img/12.jpg" alt=""></a>
+                                <p>FLUTTER</p>
+                                <span>Cuz your eyes make me see things<br>
+                                    I’ve never seen</span>
+                                <button class="btn5">REQUIEM</button>
+                            </div>
+            
+                        </div>
+            
+                    </div>
+                </div>
+            </article>
+
+            <!-- 03 PF-->
+
+            <article class="page p01 section" id="p2">
+                <div id="wa">
+                    <div class="le">
+                        <img src="img/20.jpg" alt="">
+                    </div>
+                    <div class="ri">
+                        <div class="ri_tablebox">
+                            <table>
+                                <tr>
+                                    <th>5</th>
+                                    <td><a href="#">Plastic Love<br>
+                                            Mariya Takeuchi
+                                        </a></td>
+                                    <td>15</td>
+                                    <td>MAY</td>
+                                    
+                                </tr>
+            
+                                <tr>
+                                    <th>4</th>
+                                    <td><a href="#">Just A Joke<br>
+                                            Yurie Kokubu</a></td>
+                                    <td>19</td>
+                                    <td>MAY</td>
+                                   
+                                </tr>
+
+                                <tr>
+                                    <th>3</th>
+                                    <td><a href="#">Street Dancer<br>
+                                            Hiromi Iwasaki</a></td>
+                                    <td>22</td>
+                                    <td>MAY</td>
+                                   
+                                </tr>
+
+                                <tr>
+                                    <th>2</th>
+                                    <td><a href="#">Magic Ways<br>
+                                            Tatsuro Yamashita</a></td>
+                                    <td>25</td>
+                                    <td>MAY</td>
+                                   
+                                </tr>
+        
+                                <tr>
+                                    <th>1</th>
+                                    <td><a href="#">Love Talking <br>
+                                            Tony Soprano</a></td>
+                                    <td>31</td>
+                                    <td>MAY</td>
+                                   
+                                </tr>
+            
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            
+            </article>
+
+            <!-- 04 PF-->
+
+            <article class="page p02 section" id="p3">
+                <div id="bg">
+                    <div class="rg">
+                        <div class="te1">
+                            <p>text</p>
+                            <span>text</span>
+                            </div>
+                            <div class="i1">
+                                <img src="img/31.jpg" alt="">
+                                <p>text</p>
+                            </div>
+                            <div class="i2">
+                                <img src="img/32.jpg" alt="">
+                            </div>
+                        
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- 05 PF-->
+
+            <article class="page p03 section" id="p4">
+
+            </article>
+
+            <!--마지막 페이지 모음-->
+
+            <div class="pf_bot page section" id="p6">
+
+            </div>
+            <!--//pf_bot-->
+
+        </section>
+
     </div>
-</div>
-
-</div>
-
-
-
-
-
-
-
-
-<!-- 푸터 -->
-<footer>
-  <footer>
-    <div id="footer_box">
-        <div id="footer_ul">
-            <img src="img/my.png" alt="마이 네임">
-            <ul>
-                <li> <개봉일> </li>
-                <br>
-                <li>2021.10.15</li>
-                <li> <장르> </li>
-                <br>
-                <li>
-                    액션 / 범죄 / 느와르 / 스릴러 / 피카레스크 / 복수 / 미스터리 / 드라마
-                </li>
-            </ul>
-
-            <ul>
-                <li> <감독></li>
-                <br>
-                <li>
-                    김진민
-                </li>
-                <li> <제작></li>
-                <br>
-                <li>
-                    배준모 <br>
-                    최명규 <br>
-                  
-                </li>
-                <li><각본></li>
-                <br>
-                <li>
-                   김바다
-                   
-                </li>
-            </ul>
-
-            <ul>
-                <li><출연></li>
-                <br>
-                <li>
-                    한소희 <br>
-                    박희순 <br>
-                    안보현 <br>
-                    이학주 <br>
-                    장ㅡ률 <br>
-                </li>
-            </ul>
-        </div>
-    </div>
-</footer>
+    <!--//wrap-->
 
 </body>
 
