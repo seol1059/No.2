@@ -372,13 +372,33 @@
 
        /* 5 페이지 */
        #bg {width: 100%; height: 100%; margin: 0 auto; background-image: url('img/30.jpg');
-    background-position: center; background-size: cover; display: flex; align-items: center;}
-       .rg {width: 80%; height: 80%; margin: 0 auto; background-color: #f81895; display: flex; flex-direction: column;}
-       .te1 {width: 100%; height: 30%; margin: 0 auto; background-color: #0cdaff; display: flex;}
-       .i1 {width: 80%; height: 70%; margin: 0px; background-color: #9420ff; display: flex;}
-       .i1 img {width: 400px; height: 500px; margin: 0px;}
-       .i2 {width: 20%; height: 70%; background-color: #333; display: flex;}
-       .i2 img {width: 50px; height: 50px;}
+       background-position: center; background-size: cover; display: flex; align-items: center;}
+       .rg {width: 80%; height: 80%; margin: 0 auto; background-color: #f81895; display: flex;
+        flex-direction: column;}
+       .te1 {width: 100%; height: 30%; margin: 0 auto;  display: flex;}
+       .te1 p:nth-child(1) {font-size: 100px; color: #ddd; margin: auto 0; margin-left: 100px;}
+       .te1 p:nth-child(2) {font-size: 60px; color: pink; margin-top: 100px; margin-left: 20px;}
+       .te1 p:nth-child(3) {font-size: 100px; color: #ddd; margin-top: 150px; margin-left: -500px; z-index: 1;}
+       .te1 hr {width: 500px; color: #ddd; height: fit-content; margin: auto; margin-top: 230px;}
+    
+
+       .i1 {width: 100%; height: 70%; margin: 0px; display: flex; justify-content: space-between}
+       .i1 img {width: 440px; height: 540px; margin: auto 0;  }
+       .i1 p {text-align: left; font-size: 18px; color: #eee; margin-top: 300px;
+        margin-left: -2px;}
+       .i1 hr {width: 500px; color: #ddd; height: fit-content; margin-top: 482px;
+        margin-left: -7px;}
+       
+       .i1 > .i2 {width: 300px; height:350px; margin: 0px; margin-top: 60px;}
+       .i2 img {width: 300px; height: 350px;}
+
+
+       /* 5 페이지 */
+
+       #p5 {width: 100%; height: 100%; margin: 0 auto;}
+       .bx1 {width: 100%; height: 20%; background-color: #9420ff; margin: auto}
+
+
        
 
 
@@ -813,18 +833,30 @@
                 <div id="bg">
                     <div class="rg">
                         <div class="te1">
-                            <p>text</p>
-                            <span>text</span>
+                            <p>IRDISCENT</p>
+                            <p>MELLIFLUOUS</p>
+                            <p>LUMINOUS</p>
+                            <hr>
                             </div>
                             <div class="i1">
                                 <img src="img/31.jpg" alt="">
-                                <p>text</p>
+                                <p>You're just too good to be true<br>
+                                    Can't take my eyes off of you<br>
+                                    You'd be like Heaven to touch<br>
+                                    I wanna hold you so much<br>
+                                    At long last, love has arrived<br>
+                                    And I thank God I'm alive<br>
+                                    You're just too good to be true<br>
+                                    Can't take my eyes off of you</p>
+                                    <hr>
+                                    
+                                <div class="i2">
+                                    <img src="img/32.jpg" alt="">
+                                </div>
                             </div>
-                            <div class="i2">
-                                <img src="img/32.jpg" alt="">
-                            </div>
-                        
+                            
                     </div>
+                    
                 </div>
 
             </article>
@@ -832,6 +864,9 @@
             <!-- 05 PF-->
 
             <article class="page p03 section" id="p4">
+                <div id="p5">
+                     <div class="bx1"></div>
+                </div>
 
             </article>
 
