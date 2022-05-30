@@ -27,6 +27,7 @@
 
         html {width: 100%;
             height: 100%;
+            overflow-y: hidden;
         }
 
         body::-webkit-scrollbar {
@@ -134,25 +135,25 @@ section .page:nth-of-type(2n) .con_wrap .background { right: 0}
 /* 1페이지 */
 
 #header {width: 100%; height: 50px; margin: 0 auto; 
-     color: #f81895; list-style: none; font-size: 20px; display: flex;
+     color: #f81895; list-style: none; font-size: 3vmin; display: flex;
      justify-content: space-around; font-family: 'Nanum Myeongjo', serif;}
 
-.logo {width: 200px; height: 50px; float: left; color: #f81895;
+.logo {width: 100%; height: 50px; float: left; color: #f81895;
      text-align: center;}
 .logo a {color: #f81895; text-align: center; }
-.logo p {margin-top: 20px; }
+/* .logo p {margin-top: 20px; } */
 
-nav {width: 500px; height: 50px; text-align: center; margin-left: 900px;
+nav {width: 100%; height: 50px; text-align: center; 
      display: flex; float: left;  justify-content: center; color: #f81895;}
 
-    nav ul {display: flex; margin-top: 20px; color: #f81895;}
+    nav ul {display: flex;  color: #f81895;}
     nav ul li { margin-left: 20px; color: #f81895;}
     nav a {color: #f81895;}
 
-.login {width: 200px; height: 50px; float: right; color: #f81895;
+.login {width: 100%; height: 50px; float: right; color: #f81895;
      text-align: center; }
 .login a {color: #f81895; text-align: center; }
-.login p {margin-top: 20px;}
+/* .login p {margin-top: 20px;} */
 
 #slider {width: 80%; height: calc(100% - 50px);  margin: 0 auto;
     display: flex; z-index: 1; position: relative; }
@@ -212,7 +213,7 @@ top: -25%;}
 #back {width: 100%; height: 100%; margin: 0 auto; }
 .on {width: 25%; height: 100%; margin: 0 auto; float: left;}
 .on p {-webkit-transform: rotate(270deg); -ms-transform: rotate(90deg); color: #fff;
-    font-size: 140px; margin-top: 630%; 
+    font-size: 16vh; margin-top: 630%; 
     font-family: 'Nanum Myeongjo', serif; justify-content: center; justify-items: center;}
 
 .tw {width: 75%; height: 100%; margin: 0 auto;  float: right;}
