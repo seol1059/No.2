@@ -15,108 +15,486 @@
         table, tr, th ,td {margin:0; padding:0; }
 
 
-.header {
-  text-align: center;
-  padding: 32px;
+
+        @media (min-width:1200px) {
+         
+
+          header {width: 100%; height: 50px; background-color: #000;  }
+
+
+
+header .small{width: 100%; display: flex; align-items: center; justify-content:space-around;
 }
 
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
+header a{padding: 15px; text-decoration: none; color: #fff;}
+
+header a:hover {background-color: #fff; color:#666;}
+
+
+
+.logo {width: 80px; line-height: 50px; background-color: #000; color:#fff;
+  text-align: center;}
+
+
+
+#b {display: none;}
+
+#a {display:block; }
+
+
+
+#myNav {display: none;}
+
+
+          
+
+.play { background-color: black; color: #fff; text-align: center; padding: 32px;}
+
+#row { background-color: black; display: -ms-flexbox; /* IE10 */ display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px;}
 
 /* Create four equal columns that sits next to each other */
-.column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+.column { -ms-flex: 25%; /* IE10 */ flex: 25%; max-width: 25%; padding: 0 4px;}
+.column img { margin-top: 8px; vertical-align: middle; width: 100%;}
+
+   .imgbox span {color:#fff; margin: 0 auto; font-weight:bold; font-size:13px;
+     line-height:200%; position:absolute; top:50%; left:0; display:inline-block;
+     text-align:center; width:100%;}
+
+    .imgbox:hover {opacity:0.6;}
+
+
+      .imgbox {overflow:hidden; position:relative; cursor:pointer; display:inline-block;}
+
+.imgbox > img {width:100%; height:100%; }
+
+
+.textbox:hover {opacity:0.6;}
+
+
+.textbox {float:left; width:100%; height:100%; background-color:black; margin-top: 8px;
+    opacity:0; transition:all 0.5s ease; position:absolute; top:0; left:0;}
+
 }
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-  
-}
-
-
 
 
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media (min-width:600px) and (max-width:1199px)   {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
+
+  header {width: 100%; height: 50px; background-color: #000;  }
+
+
+
+header .small{width: 100%; display: flex; align-items: center; justify-content:space-around;
 }
+
+header a{padding: 15px; text-decoration: none; color: #fff;}
+
+header a:hover {background-color: #eee; color:#666;}
+
+
+
+.logo {width: 80px; line-height: 50px; background-color: #000; color:#fff;
+  text-align: center;}
+
+
+
+#b {display: none;}
+
+#a {display:block; }
+
+
+
+#myNav {display: none;}
+
+    .play { background-color: black; color: #fff; text-align: center; padding: 32px;}
+
+#row { background-color: black; display: -ms-flexbox; /* IE10 */ display: flex; 
+  -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px;}
+
+  .column {  -ms-flex: 50%;  flex: 50%;  max-width: 50%;}
+  .column > .imgbox span {color:#fff; margin: 0 auto; font-weight:bold; font-size:13px;
+     line-height:200%;position:absolute; top:50%; left:0; display:inline-block;
+      text-align:center; width:100%;}
+
+    .column > .imgbox:hover {opacity:0.6;}
+
+
+    .column> .imgbox {overflow:hidden; position:relative; cursor:pointer; display:inline-block;
+    width: 99%; margin: 0 0.5%;}
+
+        .column > .imgbox > img {width:100%; height:100%; }
+
+
+        .textbox:hover {opacity:0.6;}
+
+
+        .textbox {float:left; width:100%; height:100%; background-color:black;
+    opacity:0; transition:all 0.5s ease; position:absolute; top:0; left:0;}
+
+   
+
+
+}
+
+  
+
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width:599px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
+
+  
+header .small {width: 100%; display: flex; align-items: center; justify-content: space-between;
+  background-color: #000;}
+
+
+
+.logo {width: 80px; line-height: 50px; background-color: #000; color:#fff; text-align: center;}
+
+
+
+#a {display:none; }
+
+img {cursor: pointer;}
+
+
+
+.overlay {height: 100%; width: 0; position: fixed; z-index:103; top: 0; left: 0; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.9); overflow-x: hidden; transition: 0.5s;}
+
+.overlay-content {position: relative;top: 25%; width: 100%; text-align: center; display:block; margin-top: 30px; }
+
+.overlay a { padding:10px; line-height:160%; text-decoration: none; font-size: 30px; color: #818181; transition: 0.3s; font-weight: bold; display: block;}
+
+.overlay a:hover, .overlay a:focus {color: #f1f1f1;}
+
+.overlay .closebtn {position: absolute; top: 20px; right: 45px; font-size: 60px;}
+
+    .play { background-color: black; color: #fff;text-align: center; padding: 32px;}
+
+#row { background-color: black; display: -ms-flexbox; /* IE10 */ display: flex;
+   -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px; }
+
+  .column { -ms-flex: 100%; flex: 100%; max-width: 100%; }
+
+  .imgbox span {color:#fff; margin: 0 auto; font-weight:bold; font-size:13px;
+     line-height:200%; position:absolute; top:50%; left:0; display:inline-block;
+     text-align:center; width:100%;}
+
+    .column > .imgbox:hover {opacity:0.6;}
+
+
+    .column> .imgbox {overflow:hidden; position:relative; cursor:pointer; display:inline-block;
+    width: 99%; margin: 0 0.5%;}
+
+        .column > .imgbox > img {width:100%; height:100%; }
+
+
+        .textbox:hover {opacity:0.6;}
+
+
+        .textbox {float:left; width:100%; height:100%; background-color:black;
+    opacity:0; transition:all 0.5s ease; position:absolute; top:0; left:0;}
+
+    
 }
         
 
 
     </style>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    function openNav() {
+
+document.getElementById("myNav").style.width = "100%";
+
+}
+
+
+
+function closeNav() {
+
+document.getElementById("myNav").style.width = "0%";
+
+}
+</script>
 </head>
 
 <body>
 
+  <header>
+
+    <div class="small">
+    <div class="logo">CIYT POP</div>
+    
+    <div id="a">
+    <a href="#">HOME</a>
+    <a href="#">SEARCH</a>
+    <a href="#">INFO</a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#">LOGIN</a>
+    </div>
+    
+    <img src="img/i.png" id="b" onclick="openNav()">
+    </div>
+    
+
+    <div id="myNav" class="overlay">
+    
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    
+    <div class="overlay-content">
+    
+    <a href="#">HOME</a>
+    
+    <a href="#">SEARCH</a>
+    
+    <a href="#">INFO</a>
+    
+    <a href="#">EVENT</a>
+    
+    <a href="#">GALLERY</a>
+    
+    <a href="#">BLOG</a>
+    
+    <a href="#">LOGIN</a>
+    
+    </div>
+
+    
+    </div>
+
+    </header>
+
     <!-- Header -->
-<div class="header">
-    <h1>Responsive Image Grid</h1>
-    <p>Resize the browser window to see the responsive effect.</p>
+    <div class="play">
+      <h1>PLAYLIST</h1>
+      <p>Resize the browser window to see the responsive effect.</p>
   </div>
-  
-  <!-- Photo Grid -->
-  <div class="row"> 
-    <div class="column">
-      <img src="img/90.png" style="width:100%">
-      <img src="img/1.jpg" style="width:100%">
-      <img src="img/10.jpg" style="width:100%">
-      <img src="img/11.jpg" style="width:100%">
-      <img src="img/12.jpg" style="width:100%">
-      <img src="img/0.jpg" style="width:100%">
-      <img src="img/1.jpg" style="width:100%">
-    </div>
-    <div class="column">
-      <img src="img/12.jpg" style="width:100%">
-      <img src="img/0.jpg" style="width:100%">
-      <img src="img/1.jpg" style="width:100%">
-      <img src="img/0.jpg" style="width:100%">
-      <img src="img/73.jpg" style="width:100%">
-      <img src="img/1.jpg" style="width:100%">
-    </div>  
-    <div class="column">
-      <img src="img/0.jpg" style="width:100%">
-      <img src="img/12.jpg" style="width:100%">
-      <img src="img/1.jpg" style="width:100%">
-      <img src="img/14b026b9cb088bbe4b642be04762946d.jpg" style="width:100%">
-      <img src="img/12.jpg" style="width:100%">
-      <img src="img/1.jpg" style="width:100%">
-      <img src="img/30.jpg" style="width:100%">
-    </div>
-    <div class="column">
-      <img src="img/42.jpg" style="width:100%">
-      <img src="img/368cd219e791b7404e816ee80426d62b.jpg" style="width:100%">
-      <img src="img/41.jpg" style="width:100%">
-      <img src="img/42.jpg" style="width:100%">
-      <img src="img/b7810fd030ae4cdee298c232bce09a73.jpg" style="width:100%">
-      <img src="img/72.jpg" style="width:100%">
-      <img src="img/1.jpg" style="width:100%">
-      
-    </div>
+
+
+
+  <div id="row">
+
+
+      <div class="column">
+
+
+
+          <div class="imgbox">
+              <img src="img/0.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Plastic Love<br>Maria Teuchi</span>
+              </div>
+          </div>
+
+
+          <div class="imgbox">
+              <img src="img/100.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Just a Joke<br>Yurie Kokubu</span>
+              </div>
+          </div>
+
+
+          <div class="imgbox">
+              <img src="img/208.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Telephone Number <br>Junko Ohashi</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/102.gif" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Street Dancer<br>Hiromi Iwaski</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/103.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span> Magic Ways<br>Tatsuro Yamashita</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/104.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Stay With Me<br>Miki Matsubara</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/201.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Love Talkin'<br>Tatsuro Yamashita</span>
+              </div>
+          </div>
+
+
+
+      </div>
+
+
+      <div class="column">
+          <div class="imgbox">
+              <img src="img/106.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Remember Summer Days<br>Anri</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/107.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Bay City<br>Junko Yagami</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/108.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span> If You<br>Toshiki Kadomatsu</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/109.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Telephone Number<br>Junko Ohashi</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/110.gif" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Love Space<br>Tatsuro Yamashita</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/111.png" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>To You<br>Yun Sang</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/113.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Stay With Me<br>Miki Matsubara</span>
+              </div>
+          </div>
+      </div>
+
+
+
+      <div class="column">
+          <div class="imgbox">
+              <img src="img/114.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Out of Time <br>The Weeknd</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/115.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Guilty Pleasures<br>Wake the Wild</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/200.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Cheapest Flight<br> PREP</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/105.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Meet us in the park we used to play
+                    <br>Friday Night Plans</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/202.png" alt="">
+              <div class="textbox">
+                  <span>In Touch<br>Midas Hutch Feat Charli Taft & Daul</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/203.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>You'll Be Fine<br>spring gang feat. Vicki Vox</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/204.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>The Weekend<br>SZA x Calvin Harris</span>
+              </div>
+          </div>
+
+
+      </div>
+      <div class="column">
+          <div class="imgbox">
+              <img src="img/205.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>『82.99 F.M』<br>Macross 82-99</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/206.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>Windy Summer<br>Anri</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/207.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span> Labyrinth<br>MONDO GROSSO</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/101.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>BABY BABYの夢<br>TANUKI</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/209.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>OH NO,OH YES!<br>Mariya Takeuchi</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/300.png" alt="" style="width:100%">
+              <div class="textbox">
+                  <span> 黄昏のBay City<br>Junko Yagami</span>
+              </div>
+          </div>
+
+          <div class="imgbox">
+              <img src="img/301.jpg" alt="" style="width:100%">
+              <div class="textbox">
+                  <span>眠れない悲しい夜なら<br>paris match</span>
+              </div>
+          </div>
+      </div>
+
   </div>
   
 
