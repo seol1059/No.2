@@ -4,220 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PLAYLIST</title>
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box;}
-        html {overflow-x: hidden;}
-        /* body::-webkit-scrollbar { display: none;} */
-        ul, li,ol {list-style: none;}
-        a { text-decoration: none; }
-        table, tr, th ,td {margin:0; padding:0; }
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/sub.css">
 
-        @media (min-width:1200px) {
-         
 
-          header {width: 100%; height: 50px; background-color: #000;  }
-
-
-
-header .small{width: 100%; display: flex; align-items: center; justify-content:space-around;
-}
-
-header a{padding: 15px; text-decoration: none; color: #fff;}
-
-header a:hover {background-color: #fff; color:#666;}
-
-
-
-.logo {width: 80px; line-height: 50px; background-color: #000; color:#fff;
-  text-align: center;}
-
-
-
-#b {display: none;}
-
-#a {display:block; }
-
-
-
-#myNav {display: none;}
-
-
-          
-
-.play { background-color: black; color: #fff; text-align: center; padding: 32px;}
-
-#row { background-color: black; display: -ms-flexbox; /* IE10 */ display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px;}
-
-/* Create four equal columns that sits next to each other */
-.column { -ms-flex: 25%; /* IE10 */ flex: 25%; max-width: 25%; padding: 0 4px;}
-.column img { margin-top: 8px; vertical-align: middle; width: 100%;}
-
-   .imgbox span {color:#fff; margin: 0 auto; font-weight:bold; font-size:13px;
-     line-height:200%; position:absolute; top:50%; left:0; display:inline-block;
-     text-align:center; width:100%;}
-
-    .imgbox:hover {opacity:0.6;}
-
-
-      .imgbox {overflow:hidden; position:relative; cursor:pointer; display:inline-block;}
-
-.imgbox > img {width:100%; height:100%; }
-
-
-.textbox:hover {opacity:0.6;}
-
-
-.textbox {float:left; width:100%; height:100%; background-color:black; margin-top: 8px;
-    opacity:0; transition:all 0.5s ease; position:absolute; top:0; left:0;}
-
-}
-
-
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (min-width:600px) and (max-width:1199px)   {
-
-  header {width: 100%; height: 50px; background-color: #000;  }
-
-
-
-header .small{width: 100%; display: flex; align-items: center; justify-content:space-around;
-}
-
-header a{padding: 15px; text-decoration: none; color: #fff;}
-
-header a:hover {background-color: #eee; color:#666;}
-
-
-
-.logo {width: 80px; line-height: 50px; background-color: #000; color:#fff;
-  text-align: center;}
-
-
-
-#b {display: none;}
-
-#a {display:block; }
-
-
-
-#myNav {display: none;}
-
-    .play { background-color: black; color: #fff; text-align: center; padding: 32px;}
-
-#row { background-color: black; display: -ms-flexbox; /* IE10 */ display: flex; 
-  -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px;}
-
-  .column {  -ms-flex: 50%;  flex: 50%;  max-width: 50%;}
-  .column > .imgbox span {color:#fff; margin: 0 auto; font-weight:bold; font-size:13px;
-     line-height:200%;position:absolute; top:50%; left:0; display:inline-block;
-      text-align:center; width:100%;}
-
-    .column > .imgbox:hover {opacity:0.6;}
-
-
-    .column> .imgbox {overflow:hidden; position:relative; cursor:pointer; display:inline-block;
-    width: 99%; margin: 0 0.5%;}
-
-        .column > .imgbox > img {width:100%; height:100%; }
-
-
-        .textbox:hover {opacity:0.6;}
-
-
-        .textbox {float:left; width:100%; height:100%; background-color:black;
-    opacity:0; transition:all 0.5s ease; position:absolute; top:0; left:0;}
-
-   
-
-
-}
-
-  
-
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width:599px) {
-
-  
-header .small {width: 100%; display: flex; align-items: center; justify-content: space-between;
-  background-color: #000;}
-
-
-
-.logo {width: 80px; line-height: 50px; background-color: #000; color:#fff; text-align: center;}
-
-
-
-#a {display:none; }
-
-img {cursor: pointer;}
-
-
-
-.overlay {height: 100%; width: 0; position: fixed; z-index:103; top: 0; left: 0; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.9); overflow-x: hidden; transition: 0.5s;}
-
-.overlay-content {position: relative;top: 25%; width: 100%; text-align: center; display:block; margin-top: 30px; }
-
-.overlay a { padding:10px; line-height:160%; text-decoration: none; font-size: 30px; color: #818181; transition: 0.3s; font-weight: bold; display: block;}
-
-.overlay a:hover, .overlay a:focus {color: #f1f1f1;}
-
-.overlay .closebtn {position: absolute; top: 20px; right: 45px; font-size: 60px;}
-
-    .play { background-color: black; color: #fff;text-align: center; padding: 32px;}
-
-#row { background-color: black; display: -ms-flexbox; /* IE10 */ display: flex;
-   -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px; }
-
-  .column { -ms-flex: 100%; flex: 100%; max-width: 100%; }
-
-  .imgbox span {color:#fff; margin: 0 auto; font-weight:bold; font-size:13px;
-     line-height:200%; position:absolute; top:50%; left:0; display:inline-block;
-     text-align:center; width:100%;}
-
-    .column > .imgbox:hover {opacity:0.6;}
-
-
-    .column> .imgbox {overflow:hidden; position:relative; cursor:pointer; display:inline-block;
-    width: 99%; margin: 0 0.5%;}
-
-        .column > .imgbox > img {width:100%; height:100%; }
-
-
-        .textbox:hover {opacity:0.6;}
-
-
-        .textbox {float:left; width:100%; height:100%; background-color:black;
-    opacity:0; transition:all 0.5s ease; position:absolute; top:0; left:0;}
-
-    
-}
-        
-
-
-    </style>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-    function openNav() {
+<script src="js/sub.js"></script>
 
-document.getElementById("myNav").style.width = "100%";
-
-}
-
-
-
-function closeNav() {
-
-document.getElementById("myNav").style.width = "0%";
-
-}
-</script>
 </head>
 
 <body>
@@ -228,15 +27,15 @@ document.getElementById("myNav").style.width = "0%";
     <div class="logo">CIYT POP</div>
     
     <div id="a">
-    <a href="#">HOME</a>
-    <a href="#">SEARCH</a>
-    <a href="#">INFO</a>
-    <a href="#"></a>
-    <a href="#"></a>
-    <a href="#">LOGIN</a>
+    <a href="index.html">HOME</a>
+    <a href="index.html">SEARCH</a>
+    <a href="index.html">INFO</a>
+    <a href="index.html"></a>
+    <a href="index.html"></a>
+    <a href="index.html">LOGIN</a>
     </div>
     
-    <img src="img/i.png" id="b" onclick="openNav()">
+    <img src="img/i.png" id="b" onclick="openNav()" alt="">
     </div>
     
 
@@ -246,19 +45,19 @@ document.getElementById("myNav").style.width = "0%";
     
     <div class="overlay-content">
     
-    <a href="#">HOME</a>
+    <a href="index.html">HOME</a>
     
-    <a href="#">SEARCH</a>
+    <a href="index.html">SEARCH</a>
     
-    <a href="#">INFO</a>
+    <a href="index.html">INFO</a>
     
-    <a href="#">EVENT</a>
+    <a href="index.html">EVENT</a>
     
-    <a href="#">GALLERY</a>
+    <a href="index.html">GALLERY</a>
     
-    <a href="#">BLOG</a>
+    <a href="index.html">BLOG</a>
     
-    <a href="#">LOGIN</a>
+    <a href="index.html">LOGIN</a>
     
     </div>
 
@@ -269,8 +68,10 @@ document.getElementById("myNav").style.width = "0%";
 
     <!-- Header -->
     <div class="play">
-      <h1>PLAYLIST</h1>
-      <p>Resize the browser window to see the responsive effect.</p>
+      <h1>PLAYLIST</h1><br>
+      <p>City pop refers to music released in Japan with<br>
+        a musical composition in the 70s and 80s<br>
+        that share urban characteristics.</p>
   </div>
 
 
@@ -285,7 +86,7 @@ document.getElementById("myNav").style.width = "0%";
           <div class="imgbox">
               <img src="img/0.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Plastic Love<br>Maria Teuchi</span>
+                  <a href="https://youtu.be/T_lC2O1oIew"><span>Plastic Love<br>Maria Teuchi</span></a>
               </div>
           </div>
 
@@ -293,7 +94,7 @@ document.getElementById("myNav").style.width = "0%";
           <div class="imgbox">
               <img src="img/100.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Just a Joke<br>Yurie Kokubu</span>
+                  <a href="https://youtu.be/A4uO2pGT5Vw"><span>Just a Joke<br>Yurie Kokubu</span></a>
               </div>
           </div>
 
@@ -301,35 +102,35 @@ document.getElementById("myNav").style.width = "0%";
           <div class="imgbox">
               <img src="img/208.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Telephone Number <br>Junko Ohashi</span>
+                  <a href="https://youtu.be/bhyAvPW72WY"><span>Telephone Number <br>Junko Ohashi</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/102.gif" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Street Dancer<br>Hiromi Iwaski</span>
+                  <a href="https://youtu.be/RO1BvdmJYBY"><span>Street Dancer<br>Hiromi Iwaski</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/103.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span> Magic Ways<br>Tatsuro Yamashita</span>
+                  <a href="https://youtu.be/W0TMrMyAeOg"><span> Magic Ways<br>Tatsuro Yamashita</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/104.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Stay With Me<br>Miki Matsubara</span>
+                  <a href="https://youtu.be/nuU2YHtxMik"><span>Stay With Me<br>Miki Matsubara</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/201.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Love Talkin'<br>Tatsuro Yamashita</span>
+                  <a href="https://youtu.be/TfHogwOGZKg"><span>Love Talkin'<br>Tatsuro Yamashita</span></a>
               </div>
           </div>
 
@@ -342,49 +143,49 @@ document.getElementById("myNav").style.width = "0%";
           <div class="imgbox">
               <img src="img/106.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Remember Summer Days<br>Anri</span>
+                  <a href="https://youtu.be/idipMrfAZHk"><span>Remember Summer Days<br>Anri</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/107.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Bay City<br>Junko Yagami</span>
+                  <a href="https://youtu.be/6zCmVD9vgPk"><span>Bay City<br>Junko Yagami</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/108.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span> If You<br>Toshiki Kadomatsu</span>
+                  <a href="https://youtu.be/lHxvQ1wKCuA"><span> If You<br>Toshiki Kadomatsu</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/109.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Telephone Number<br>Junko Ohashi</span>
+                  <a href="https://youtu.be/bhyAvPW72WY"><span>Telephone Number<br>Junko Ohashi</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/110.gif" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Love Space<br>Tatsuro Yamashita</span>
+                  <a href="https://youtu.be/pLFZQbVStCg"><span>Love Space<br>Tatsuro Yamashita</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/111.png" alt="" style="width:100%">
               <div class="textbox">
-                  <span>To You<br>Yun Sang</span>
+                  <a href="https://youtu.be/6BfknZyYGOQ"><span>To You<br>Yun Sang</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/113.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Stay With Me<br>Miki Matsubara</span>
+                  <a href="https://youtu.be/nuU2YHtxMik"><span>Stay With Me<br>Miki Matsubara</span></a>
               </div>
           </div>
       </div>
@@ -395,50 +196,50 @@ document.getElementById("myNav").style.width = "0%";
           <div class="imgbox">
               <img src="img/114.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Out of Time <br>The Weeknd</span>
+                  <a href="https://youtu.be/KT_a2rvR-4c"><span>Out of Time <br>The Weeknd</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/115.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Guilty Pleasures<br>Wake the Wild</span>
+                  <a href="https://youtu.be/68uattadaCA"><span>Guilty Pleasures<br>Wake the Wild</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/200.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Cheapest Flight<br> PREP</span>
+                  <a href="https://youtu.be/W6a7ZQs4--c"><span>Cheapest Flight<br> PREP</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/105.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Meet us in the park we used to play
-                    <br>Friday Night Plans</span>
+                  <a href="https://youtu.be/QvW3YAsyzIE"><span>Meet us in the park we used to play
+                    <br>Friday Night Plans</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/202.png" alt="">
               <div class="textbox">
-                  <span>In Touch<br>Midas Hutch Feat Charli Taft & Daul</span>
+                  <a href="https://youtu.be/OPcBbXs5bMM"><span>In Touch<br>Midas Hutch Feat Charli Taft & Daul</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/203.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>You'll Be Fine<br>spring gang feat. Vicki Vox</span>
+                  <a href="https://youtu.be/aHuK8g3ENI8"><span>You'll Be Fine<br>spring gang feat. Vicki Vox</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/204.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>The Weekend<br>SZA x Calvin Harris</span>
+                  <a href="https://youtu.be/KT_a2rvR-4c"><span>The Weekend<br>SZA x Calvin Harris</span></a>
               </div>
           </div>
 
@@ -448,49 +249,49 @@ document.getElementById("myNav").style.width = "0%";
           <div class="imgbox">
               <img src="img/205.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>『82.99 F.M』<br>Macross 82-99</span>
+                  <a href="https://youtu.be/9ULfFe9_D1c"><span>『82.99 F.M』<br>Macross 82-99</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/206.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>Windy Summer<br>Anri</span>
+                  <a href="https://youtu.be/_EpENClIAWM"><span>Windy Summer<br>Anri</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/207.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span> Labyrinth<br>MONDO GROSSO</span>
+                 <a href="https://youtu.be/_2quiyHfJQw"> <span> Labyrinth<br>MONDO GROSSO</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/101.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>BABY BABYの夢<br>TANUKI</span>
+                 <a href="https://youtu.be/07bg0MuBnp0"> <span>BABY BABYの夢<br>TANUKI</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/209.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>OH NO,OH YES!<br>Mariya Takeuchi</span>
+                  <a href="https://youtu.be/OpnVFmISKGM"><span>OH NO,OH YES!<br>Mariya Takeuchi</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/300.png" alt="" style="width:100%">
               <div class="textbox">
-                  <span> 黄昏のBay City<br>Junko Yagami</span>
+                  <a href="https://youtu.be/55zBtHKtd6o"><span> 黄昏のBay City<br>Junko Yagami</span></a>
               </div>
           </div>
 
           <div class="imgbox">
               <img src="img/301.jpg" alt="" style="width:100%">
               <div class="textbox">
-                  <span>眠れない悲しい夜なら<br>paris match</span>
+                  <a href="https://youtu.be/iO_HMbvEZ1A"><span>眠れない悲しい夜なら<br>paris match</span></a>
               </div>
           </div>
       </div>
